@@ -1,0 +1,43 @@
+.authPage {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    filter: blur(10px);
+    background: rgba(255, 255, 255, 0.6);
+    background-image: url('../../images/AuthBackground.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.6;
+}
+
+.loginWindow {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.loginTitle {
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    line-height: 28px;
+    color: #424242;
+}
+
+.loginForm {
+    margin-top: 32px;
+}

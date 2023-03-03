@@ -1,0 +1,66 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.fieldLabel {
+    text-align: left;
+    line-height: 19px;
+    margin-bottom: 7px;
+}
+
+.input {
+    width: 345px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #C9CACC;
+    border-radius: 4px;
+    line-height: 18px;
+    padding: 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.error {
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #EB1717;
+    z-index: 100;
+    bottom: -20px;
+    text-align: left;
+}
+
+.fieldErr {
+    color: #EB1717;
+}
+
+.btn {
+    width: 345px;
+    height: 50px;
+    background: linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 7px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    border: 0;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), 
+    rgba(255, 255, 255, 0.2)), 
+    linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
+
+.btn:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+    linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
