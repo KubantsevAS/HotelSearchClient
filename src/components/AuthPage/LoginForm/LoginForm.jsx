@@ -2,11 +2,16 @@ import React from 'react'
 import { Form, Field } from 'react-final-form'
 import { checkEmail, checkLatinText, composeValidators, minLengthCreator, requiredField } from '../../common/validators'
 import styles from './LoginForm.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLogin } from '../../../redux/AuthReducer'
 
 const LoginForm = () => {
 
-    const onSubmit = () => {
+    const auth = useSelector(store => store?.reducer?.AuthReducer?.auth);
+    const dispatch = useDispatch();
 
+    const onSubmit = () => {
+        dispatch(setLogin());
     }
 
     const CreateInput = (props) => {
