@@ -1,9 +1,10 @@
 import React from 'react'
-import { Form, Field } from 'react-final-form'
+import { Form } from 'react-final-form'
 import { checkEmail, checkLatinText, composeValidators, minLengthCreator, requiredField } from '../../common/validators'
 import styles from './LoginForm.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLogin } from '../../../redux/AuthReducer'
+import { CreateInput } from '../../common/formhelper'
 
 const LoginForm = () => {
 
@@ -14,22 +15,6 @@ const LoginForm = () => {
         dispatch(setLogin());
     }
 
-    const CreateInput = (props) => {
-        return (
-            <Field name={props.name} validate={props.validate}>
-                        {({ input, meta }) =>{ 
-                            let checkErr = meta.error && meta.touched;
-                            return (
-                            <div className={styles.field}>
-                                <label className={styles.fieldLabel + ' ' + (checkErr ? styles.fieldErr : '')}>{props.label}</label>
-                                <input {...input} type={props.type} className={styles.input + ' ' + (checkErr ? styles.fieldErr : '')}/>
-                                {checkErr && <span className={styles.error}>{meta.error}</span>}
-                            </div>)
-                        }}
-                    </Field>
-        )
-    }
-
     return (
         <Form
             onSubmit={onSubmit}
@@ -38,15 +23,17 @@ const LoginForm = () => {
                 <form onSubmit={handleSubmit}>
                     <CreateInput
                         name="email"
-                        validate={composeValidators(requiredField, checkLatinText, checkEmail )}
+                        validate={composeValidators(requiredField, checkLatinText, checkEmail)}
                         label="Логин"
                         type="text"
+                        styles={styles}
                     />
                     <CreateInput
                         name="password"
                         validate={composeValidators(requiredField, checkLatinText, minLengthCreator(8))}
                         label="Пароль"
                         type="password"
+                        styles={styles}
                     />
                     <button type="submit" disabled={submitting} className={styles.btn}>
                         Войти

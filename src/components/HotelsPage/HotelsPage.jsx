@@ -1,7 +1,12 @@
 import React from 'react'
+import Header from './Header/Header'
+import Main from './Main/Main'
 
 export default function HotelsPage() {
     return (
-        <div>HotelsPage</div>
+        <div>
+            <Header/>
+            <Main/>
+        </div>
     )
 }
