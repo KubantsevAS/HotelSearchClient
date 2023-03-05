@@ -1,4 +1,4 @@
-const SET_LOGIN = 'auth/SET_LOGIN'
+export const SET_LOGIN = 'auth/SET_LOGIN'
 
 const AuthReducer = (state = {auth: false}, action) => {
     switch(action.type) {

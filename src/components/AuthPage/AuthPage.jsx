@@ -1,11 +1,16 @@
 import React from 'react'
-import { Form } from 'react-final-form';
-import { HotelApi } from '../../api/api';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import styles from './AuthPage.module.css'
 import LoginForm from './LoginForm/LoginForm';
 
 export default function AuthPage() {
-    HotelApi.getHotelItems();
+
+  const auth = useSelector(store => store.reducer.AuthReducer.auth);
+  if (auth) {
+    return <Navigate to='/hotels'/>
+  }
+
   return (
     <div className={styles.authPage}>
         <div className={styles.pic}></div>

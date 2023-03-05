@@ -1,0 +1,18 @@
+.liked {
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    color: #424242;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.liked span{
+    font-weight: 500;
+}
+
+.itemsContainer {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}

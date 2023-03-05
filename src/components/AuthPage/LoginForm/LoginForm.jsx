@@ -8,7 +8,6 @@ import { CreateInput } from '../../common/formhelper'
 
 const LoginForm = () => {
 
-    const auth = useSelector(store => store?.reducer?.AuthReducer?.auth);
     const dispatch = useDispatch();
 
     const onSubmit = () => {
@@ -23,14 +22,14 @@ const LoginForm = () => {
                 <form onSubmit={handleSubmit}>
                     <CreateInput
                         name="email"
-                        validate={composeValidators(requiredField, checkLatinText, checkEmail)}
+                        //validate={composeValidators(requiredField, checkLatinText, checkEmail)}
                         label="Логин"
                         type="text"
                         styles={styles}
                     />
                     <CreateInput
                         name="password"
-                        validate={composeValidators(requiredField, checkLatinText, minLengthCreator(8))}
+                        //validate={composeValidators(requiredField, checkLatinText, minLengthCreator(8))}
                         label="Пароль"
                         type="password"
                         styles={styles}
