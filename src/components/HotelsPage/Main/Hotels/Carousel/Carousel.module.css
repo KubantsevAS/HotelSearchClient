@@ -1,0 +1,13 @@
+.carousel {
+    padding: 28px 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.item {
+    height: 149px;
+    min-width: 164px;
+    margin-right: 12px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}

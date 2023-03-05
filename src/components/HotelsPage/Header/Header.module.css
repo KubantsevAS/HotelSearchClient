@@ -1,5 +1,6 @@
 .header {
-    width: 100%;
+    width: 1440px;
+    margin: 0 auto;
     padding: 32px;
     height: 92px;
     box-sizing: border-box;

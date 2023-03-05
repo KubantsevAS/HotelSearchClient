@@ -1,22 +1,18 @@
 import axios from "axios";
+import moment from "moment/moment";
 
-const baseUrl = "http://engine.hotellook.com/api/v2/lookup.json";
+const baseUrl = "http://engine.hotellook.com/api/v2/lookup.json?";
+const baseUrlnew = "http://engine.hotellook.com/api/v2/cache.json?"
 
-// export const HotelApi = {
-//     getHotelItems() {
-//         axios.get(`${baseUrl}?query=moscow&lang=ru&lookFor=both&limit=1`)
-//             .then(response => {
-//                 console.log(response.data.results)
-//                 return response.data.results.hotels
-//             })
-//     }
-// }
+let initialCheckIn = moment().format('YYYY-MM-DD')
+let initialCheckOut = moment().add(23, 'days').format('YYYY-MM-DD')
 
-export const getHotelItems = async (searchQuery) => {
-    const request = await axios.get(`${baseUrl}?query=moscow&lang=ru&lookFor=both&limit=5`)
+
+export const getHotelItems = async (location = 'Moscow', checkIn = initialCheckIn, checkOut = initialCheckOut) => {
+    const request = await axios.get(`${baseUrlnew}location=${location}&currency=rub&checkIn=${checkIn}&checkOut=${checkOut}&limit=5`)
         .then(response => {
-            console.log(response.data.results.hotels)
-            return response.data.results.hotels
+            //console.log(response.data.results.hotels)
+            return {data: response.data, checkIn, checkOut}
         })
     return request
 }
