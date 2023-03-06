@@ -3,7 +3,7 @@ import { Form } from 'react-final-form'
 import styles from './LoginForm.module.css'
 import { useDispatch } from 'react-redux'
 import { setLogin } from '../../redux/AuthReducer'
-import { CreateInput } from '../../components/common/formHelper'
+import { CreateInput } from '../../common/formHelper'
 
 const LoginForm = () => {
     const dispatch = useDispatch();

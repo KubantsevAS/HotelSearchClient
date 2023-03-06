@@ -1,29 +1,30 @@
-import React, { useState} from 'react'
-import ReactDatePicker from 'react-datepicker'
+import React from 'react'
 import { Form, Field } from 'react-final-form'
+import MyDatePicker from '../../../../../features/MyDatePicker/MyDatePicker'
 import styles from './FindHotel.module.css'
+import { calendarSvg } from '../../../../../images/svgCollector'
+import { useDispatch } from 'react-redux'
+import moment from 'moment'
+import { getHotelsData } from '../../../../../redux/HotelReducer'
+
 
 export default function FindHotel() {
 
-    const onSubmit = () => {
-        alert('click')
+    const dispatch = useDispatch();
+
+    const onSubmit = ({city, date, days}) => {
+        let check = date.split('-').reverse()
+        let checkIn = moment(check).format('YYYY-MM-DD');
+        let checkout = moment(check).add(days, 'days').format('YYYY-MM-DD');
+        dispatch(getHotelsData('Omsk', checkIn, checkout))
+        console.log(checkIn , checkout)
     }
 
-    const [startDate, setStartDate] = useState(new Date());
-
-    const getDataPicker = () => {
-        console.log(startDate)
-        return (
-            <ReactDatePicker
-                showIcon
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-            />
-        );
-    };
+    const calendar = calendarSvg();
 
     return (
         <div className={styles.findForm}>
+
             <Form
                 onSubmit={onSubmit}
             >
@@ -32,7 +33,7 @@ export default function FindHotel() {
                         <div className={styles.field}>
                             <label className={styles.fieldLabel}>Локация</label>
                             <Field
-                                name="firstName"
+                                name="city"
                                 component="input"
                                 type="text"
                                 placeholder="Москва"
@@ -41,20 +42,22 @@ export default function FindHotel() {
                         </div>
                         <div className={styles.field}>
                             <label className={styles.fieldLabel}>Дата заселения</label>
-                            {/* <Field
-                                name="lastName"
-                                component="input"
-                                type="text"
-                                placeholder="07.07.2020"
+                            
+                            <Field
+                                name="date"
+                                component={MyDatePicker}
                                 className={styles.input}
-                            >
-                            </Field> */}
-                            {getDataPicker()}
+                            />
+
+                            <div className={styles.calendarIcon}>{calendar}</div>
+
+
+
                         </div>
                         <div className={styles.field}>
                             <label className={styles.fieldLabel}>Количество дней</label>
                             <Field
-                                name="lastName"
+                                name="days"
                                 component="input"
                                 type="text"
                                 placeholder="1"

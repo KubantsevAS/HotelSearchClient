@@ -14,6 +14,7 @@
     flex-direction: column;
     margin-bottom: 16px;
     font-size: 16px;
+    position: relative;
 }
 
 .fieldLabel {
@@ -61,4 +62,11 @@
 .btn:active {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
     linear-gradient(104.34deg, #41522E -15.34%, #BE8022 145.95%);
+}
+
+.calendarIcon {
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+    pointer-events: none;
 }

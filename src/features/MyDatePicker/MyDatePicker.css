@@ -1,0 +1,63 @@
+.MyDataPickerInput {
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #C9CACC;
+    border-radius: 4px;
+    line-height: 20px;
+    padding: 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.react-datepicker__day--selected {
+    background-color: #41522E;
+    font-weight: 300;
+}
+
+.react-datepicker__header {
+    background-color: #FFFFFF;
+    border-bottom: 0;
+}
+
+.react-datepicker {
+    padding: 32px;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    font-family: 'Aktiv Grotesk Corp';
+    font-weight: 400;
+    border: 0;
+    height: 300px;
+}
+
+.react-datepicker__month-container {
+
+    height: 250.85px;
+    font-size: 16px;
+}
+
+.react-datepicker__day {
+    width: 32px;
+    height: 32px;
+    margin: 6px;
+}
+
+.react-datepicker__navigation {
+    top: 32px;
+    padding: 0 50px;
+}
+
+.react-datepicker__day-name {
+    width: 32px;
+    height: 32px;
+    color: #bdbdbd;
+    margin: 12px 6px 0;
+}
+
+.react-datepicker__current-month {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
