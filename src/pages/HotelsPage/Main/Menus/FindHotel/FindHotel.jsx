@@ -1,7 +1,6 @@
 import React, { useState} from 'react'
 import ReactDatePicker from 'react-datepicker'
 import { Form, Field } from 'react-final-form'
-import { CreateInput } from '../../../../common/formhelper'
 import styles from './FindHotel.module.css'
 
 export default function FindHotel() {
