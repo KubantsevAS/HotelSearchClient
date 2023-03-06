@@ -5,7 +5,7 @@ const baseUrl = "http://engine.hotellook.com/api/v2/lookup.json?";
 const baseUrlnew = "http://engine.hotellook.com/api/v2/cache.json?"
 
 let initialCheckIn = moment().format('YYYY-MM-DD')
-let initialCheckOut = moment().add(23, 'days').format('YYYY-MM-DD')
+let initialCheckOut = moment().add(21, 'days').format('YYYY-MM-DD')
 
 
 export const getHotelItems = async (location = 'Moscow', checkIn = initialCheckIn, checkOut = initialCheckOut) => {

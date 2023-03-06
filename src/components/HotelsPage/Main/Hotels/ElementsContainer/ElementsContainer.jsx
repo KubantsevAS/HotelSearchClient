@@ -12,9 +12,8 @@ export default function ElementsContainer() {
     let checkIn = useSelector(store => store.reducer.HotelReducer.checkIn).split('-')
     let checkOut = useSelector(store => store.reducer.HotelReducer.checkOut).split('-')
 
-    let days = moment(checkOut).from(moment(checkIn), true)
-    console.log(days)
-
+    let days = moment(checkOut).diff(moment(checkIn), 'days')
+    
     const handleHotels = () => {
         dispatch(getHotelsData());
     }

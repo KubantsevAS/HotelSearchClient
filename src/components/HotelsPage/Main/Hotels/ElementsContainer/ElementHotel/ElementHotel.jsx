@@ -1,18 +1,20 @@
-import React from 'react'
-import { heartSvg, hotelPicSvg, hotelStarsSvg } from '../../../../../../images/svgCollector'
-import styles from './ElementHotel.module.css'
+import React from 'react';
+import { heartSvg, hotelPicSvg, hotelStarsSvg } from '../../../../../../images/svgCollector';
+import styles from './ElementHotel.module.css';
 
 export default function ElementHotel(props) {
 
-    let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'] 
-    let day = props.days.split(' ')[0];
+    let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+    
+    let newArr = props.days.toString().split('');
 
-    if (props.days === 'a day') {
-        day = 1
-    } else day = props.days.split(' ')[0]
-
-    let dayFormat = day === 1 ? '1 день' : day  < 5 ? `${day} дня` : `${day} дней`
-
+    const makeCorrectDaysText = (dayFormat) => {
+        if (dayFormat < 10) {
+            return dayFormat === 1 ? 'день' : dayFormat > 1 && dayFormat < 5 ? `дня` : `дней`
+        } else if (dayFormat > 20) {
+            return +newArr[newArr.length - 1] === 1 ? 'день' : newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5 ? `дня` : `дней`
+        } else return 'дней'
+    }
     
     return (
         <div className={styles.block}>
@@ -27,7 +29,8 @@ export default function ElementHotel(props) {
                     <div className={styles.date}>
                         {`${+props.checkIn[2]} ${months[+props.checkIn[1] - 1]} ${props.checkIn[0]}`}
                         <span></span>
-                        {dayFormat}</div>
+                        {`${props.days} ${makeCorrectDaysText(props.days)}`}
+                    </div>
                     <div className={styles.stars}>
                         {hotelStarsSvg(props.stars)}
                     </div>

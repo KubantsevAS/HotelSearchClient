@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState} from 'react'
+import ReactDatePicker from 'react-datepicker'
 import { Form, Field } from 'react-final-form'
 import { CreateInput } from '../../../../common/formhelper'
 import styles from './FindHotel.module.css'
@@ -8,6 +9,19 @@ export default function FindHotel() {
     const onSubmit = () => {
         alert('click')
     }
+
+    const [startDate, setStartDate] = useState(new Date());
+
+    const getDataPicker = () => {
+        console.log(startDate)
+        return (
+            <ReactDatePicker
+                showIcon
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+            />
+        );
+    };
 
     return (
         <div className={styles.findForm}>
@@ -28,13 +42,15 @@ export default function FindHotel() {
                         </div>
                         <div className={styles.field}>
                             <label className={styles.fieldLabel}>Дата заселения</label>
-                            <Field
+                            {/* <Field
                                 name="lastName"
                                 component="input"
                                 type="text"
                                 placeholder="07.07.2020"
                                 className={styles.input}
-                            />
+                            >
+                            </Field> */}
+                            {getDataPicker()}
                         </div>
                         <div className={styles.field}>
                             <label className={styles.fieldLabel}>Количество дней</label>
