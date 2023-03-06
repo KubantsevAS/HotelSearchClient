@@ -1,13 +1,11 @@
 import React from 'react'
 import { Form } from 'react-final-form'
-import { checkEmail, checkLatinText, composeValidators, minLengthCreator, requiredField } from '../../common/validators'
 import styles from './LoginForm.module.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { setLogin } from '../../../redux/AuthReducer'
-import { CreateInput } from '../../common/formhelper'
+import { useDispatch } from 'react-redux'
+import { setLogin } from '../../redux/AuthReducer'
+import { CreateInput } from '../../components/common/formHelper'
 
 const LoginForm = () => {
-
     const dispatch = useDispatch();
 
     const onSubmit = () => {

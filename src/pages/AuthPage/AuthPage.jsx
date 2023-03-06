@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import styles from './AuthPage.module.css'
-import LoginForm from './LoginForm/LoginForm';
+import LoginForm from '../../features/LoginForm/LoginForm';
+import styles from './AuthPage.module.css';
 
 export default function AuthPage() {
 

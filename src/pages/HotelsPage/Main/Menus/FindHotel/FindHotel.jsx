@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, Field } from 'react-final-form'
-import { CreateInput } from '../../../../common/formhelper'
 import styles from './FindHotel.module.css'
 
 export default function FindHotel() {

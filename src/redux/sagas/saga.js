@@ -11,7 +11,6 @@ export function* handleHotelsData () {
 
 export function* watchClickSaga () {
     yield takeEvery(GET_HOTELS_DATA, handleHotelsData);
-
 }
 
 export function* rootSaga () {

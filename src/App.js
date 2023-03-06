@@ -1,12 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import AuthPage from './components/AuthPage/AuthPage';
-import './App.css';
-import HotelsPage from './components/HotelsPage/HotelsPage';
 import { connect, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+
+import AuthPage from './pages/AuthPage';
+import HotelsPage from './pages/HotelsPage';
+
+import './App.css';
 
 export const App = (props) => {
-  
   const auth = useSelector(store => store.reducer.AuthReducer.auth)
 
   console.log(auth);
@@ -21,8 +21,6 @@ export const App = (props) => {
     </div>
   );
 }
-
-
 
 const mapStateToProps = (store) => ({
   auth: store.reducer.AuthReducer.auth
