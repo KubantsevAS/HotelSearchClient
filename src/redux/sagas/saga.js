@@ -4,11 +4,10 @@ import { getHotelItems } from '../../api/api';
 import { GET_HOTELS_DATA, setHotelsData, SET_HOTELS_DATA } from '../HotelReducer';
 
 
-export function* handleHotelsData (action) {
-    
+export function* handleHotelsData(action) {
     const {location, checkIn, checkOut } = action.payload;
 
-    const data = yield call(getHotelItems, location, checkIn, checkOut );
+    const data = yield call(getHotelItems, location, checkIn, checkOut);
     yield put(setHotelsData(data));
 }
 

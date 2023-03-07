@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux'
 import moment from 'moment'
 import { getHotelsData } from '../../../../../redux/HotelReducer'
 
-
 export default function FindHotel() {
 
     const dispatch = useDispatch();
@@ -24,10 +23,7 @@ export default function FindHotel() {
 
     return (
         <div className={styles.findForm}>
-
-            <Form
-                onSubmit={onSubmit}
-            >
+            <Form onSubmit={onSubmit} >
                 {({ handleSubmit, submitError, submitting, values }) => (
                     <form onSubmit={handleSubmit}>
                         <div className={styles.field}>

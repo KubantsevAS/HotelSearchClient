@@ -6,27 +6,28 @@ import { likeHotel } from '../../../../../../redux/HotelReducer';
 import { addNewHotel } from '../../../../../../redux/LikedListReducer';
 import styles from './ElementHotel.module.css';
 
-export default function ElementHotel(props) {
+const ElementHotel = ({ checkIn, days, stars, hotelId, priceAvg, hotelName, loading }) => {
+    const likedList = useSelector(store => store.reducer.HotelReducer.likedId);
+    const dispatch = useDispatch();
+    
+    if (loading) {
+        return <div className={styles.block}>...loading</div>
+    }
 
-    let checkInDate = fullDateFormat(props.checkIn);
-    let daysInHotel = makeCorrectDaysText(props.days);
+    let checkInDate = fullDateFormat(checkIn);
+    let daysInHotel = makeCorrectDaysText(days);
     
     const hotelPic = hotelPicSvg();
-    const hotelStar = hotelStarsSvg(props.stars);
+    const hotelStar = hotelStarsSvg(stars);
     const heart = heartSvg();
     const heartActive = heartActiveSvg();
-
-    const likedList = useSelector(store => store.reducer.HotelReducer.likedId);
-
-    const dispatch = useDispatch();
     const pushLikeButton = () => {
-        dispatch(likeHotel(props.hotelId))
-        dispatch(addNewHotel({hotelId: props.hotelId, checkInDate, daysInHotel, stars: props.stars, priceAvg: props.priceAvg}))
+        // dispatch(likeHotel(hotelId))
+        // dispatch(addNewHotel({hotelId, checkInDate, daysInHotel, stars, priceAvg}))
     }
     
-    
     return (
-        <div className={styles.block}>
+        <div className={styles.block} key={hotelId}>
             <div className={styles.container}>
 
                 <div className={styles.pic}>
@@ -34,11 +35,11 @@ export default function ElementHotel(props) {
                 </div>
 
                 <div className={styles.info}>
-                    <div className={styles.hotelTitle}>{props.hotelName}</div>
+                    <div className={styles.hotelTitle}>{hotelName}</div>
                     <div className={styles.date}>
                         {checkInDate}
                         <span></span>
-                        {`${props.days} ${daysInHotel}`}
+                        {`${days} ${daysInHotel}`}
                     </div>
                     <div className={styles.stars}>
                         {hotelStar}
@@ -47,11 +48,11 @@ export default function ElementHotel(props) {
 
                 <div className={styles.likedPrice}>
                     <div className={styles.heart} onClick={pushLikeButton}>
-                        {likedList.includes(props.hotelId) ? heartActive : heart}
+                        {likedList.includes(hotelId) ? heartActive : heart}
                     </div>
                     <div className={styles.price}>
                         <span className={styles.priceText}>Price:</span>
-                        <span className={styles.priceNumber}>{props.priceAvg} ₽</span>
+                        <span className={styles.priceNumber}>{priceAvg} ₽</span>
                     </div>
                 </div>
 
@@ -59,3 +60,5 @@ export default function ElementHotel(props) {
         </div>
     )
 }
+
+export default ElementHotel;
