@@ -1,12 +1,15 @@
+import moment from "moment"
+
 export const SET_HOTELS_DATA = 'hotel/SET_HOTELS_DATA'
 export const GET_HOTELS_DATA = 'hotel/GET_HOTELS_DATA'
 export const LIKE = 'hotel/LIKE'
 
+
 const initialState = {
     hotels: [],
-    checkIn: '2020-02-01',
-    checkOut: '2020-02-03',
-    location: 'Moscow',
+    checkIn: moment().format('YYYY-MM-DD'),
+    checkOut: moment().add(1, 'days').format('YYYY-MM-DD'),
+    location: 'Москва',
     likedId: [],
 }
 
@@ -33,7 +36,7 @@ const HotelReducer = (state = initialState, action) => {
 
 // ACTION CREATORS
 
-export const getHotelsData = () => ({type: GET_HOTELS_DATA})
+export const getHotelsData = (payload) => ({type: GET_HOTELS_DATA, payload})
 
 export const setHotelsData = (payload) => ({type: SET_HOTELS_DATA, payload})
 

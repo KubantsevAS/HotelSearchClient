@@ -12,12 +12,12 @@ export default function FindHotel() {
 
     const dispatch = useDispatch();
 
-    const onSubmit = ({city, date, days}) => {
-        let check = date.split('-').reverse()
-        let checkIn = moment(check).format('YYYY-MM-DD');
-        let checkout = moment(check).add(days, 'days').format('YYYY-MM-DD');
-        dispatch(getHotelsData('Omsk', checkIn, checkout))
-        console.log(checkIn , checkout)
+    const onSubmit = ({location, date, days}) => {
+        let check = date.split('-').reverse().map(elem => +elem);
+        check[1] -= 1;
+        let checkIn = moment(check).format('YYYY-MM-DD')
+        let checkOut = moment(check).add(days, 'days').format('YYYY-MM-DD');
+        dispatch(getHotelsData({location, checkIn, checkOut}))
     }
 
     const calendar = calendarSvg();
@@ -33,7 +33,7 @@ export default function FindHotel() {
                         <div className={styles.field}>
                             <label className={styles.fieldLabel}>Локация</label>
                             <Field
-                                name="city"
+                                name="location"
                                 component="input"
                                 type="text"
                                 placeholder="Москва"
