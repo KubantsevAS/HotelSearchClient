@@ -1,7 +1,11 @@
 import React from 'react'
-import styles from './Liked.module.css'
+import { useSelector } from 'react-redux'
+import styles from './LikedList.module.css'
 
 export default function Liked() {
+
+    let hotels = useSelector(store => store.reducer.LikedListReducer.hotelsData)
+    console.log(hotels)
     return (
         <div className={styles.likedMenu}>
             <div className={styles.title}>Избранное</div>

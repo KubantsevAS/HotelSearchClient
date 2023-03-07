@@ -8,3 +8,29 @@
     width: 664px;
     box-sizing: border-box;
 }
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.destination {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    color: #424242;
+    display: flex;
+    align-items: center;
+}
+
+.destination span {
+    margin: 0 20px;
+}
+
+.date {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #41522E;
+}

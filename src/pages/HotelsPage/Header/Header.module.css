@@ -23,6 +23,7 @@
     color: #41522E;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .exit svg {

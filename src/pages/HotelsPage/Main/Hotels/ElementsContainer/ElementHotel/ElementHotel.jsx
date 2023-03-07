@@ -1,44 +1,53 @@
 import React from 'react';
-import { heartSvg, hotelPicSvg, hotelStarsSvg } from '../../../../../../images/svgCollector';
+import { useDispatch, useSelector } from 'react-redux';
+import { fullDateFormat, makeCorrectDaysText } from '../../../../../../common/otherConst';
+import { heartActiveSvg, heartSvg, hotelPicSvg, hotelStarsSvg } from '../../../../../../images/svgCollector';
+import { likeHotel } from '../../../../../../redux/HotelReducer';
+import { addNewHotel } from '../../../../../../redux/LikedListReducer';
 import styles from './ElementHotel.module.css';
 
 export default function ElementHotel(props) {
 
-    let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+    let checkInDate = fullDateFormat(props.checkIn);
+    let daysInHotel = makeCorrectDaysText(props.days);
     
-    let newArr = props.days.toString().split('');
+    const hotelPic = hotelPicSvg();
+    const hotelStar = hotelStarsSvg(props.stars);
+    const heart = heartSvg();
+    const heartActive = heartActiveSvg();
 
-    const makeCorrectDaysText = (dayFormat) => {
-        if (dayFormat < 10) {
-            return dayFormat === 1 ? 'день' : dayFormat > 1 && dayFormat < 5 ? `дня` : `дней`
-        } else if (dayFormat > 20) {
-            return +newArr[newArr.length - 1] === 1 ? 'день' : newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5 ? `дня` : `дней`
-        } else return 'дней'
+    const likedList = useSelector(store => store.reducer.HotelReducer.likedId);
+
+    const dispatch = useDispatch();
+    const pushLikeButton = () => {
+        dispatch(likeHotel(props.hotelId))
+        dispatch(addNewHotel({hotelId: props.hotelId, checkInDate, daysInHotel, stars: props.stars, priceAvg: props.priceAvg}))
     }
+    
     
     return (
         <div className={styles.block}>
             <div className={styles.container}>
 
                 <div className={styles.pic}>
-                    {hotelPicSvg()}
+                    {hotelPic}
                 </div>
 
                 <div className={styles.info}>
                     <div className={styles.hotelTitle}>{props.hotelName}</div>
                     <div className={styles.date}>
-                        {`${+props.checkIn[2]} ${months[+props.checkIn[1] - 1]} ${props.checkIn[0]}`}
+                        {checkInDate}
                         <span></span>
-                        {`${props.days} ${makeCorrectDaysText(props.days)}`}
+                        {`${props.days} ${daysInHotel}`}
                     </div>
                     <div className={styles.stars}>
-                        {hotelStarsSvg(props.stars)}
+                        {hotelStar}
                     </div>
                 </div>
 
                 <div className={styles.likedPrice}>
-                    <div className={styles.heart}>
-                        {heartSvg()}
+                    <div className={styles.heart} onClick={pushLikeButton}>
+                        {likedList.includes(props.hotelId) ? heartActive : heart}
                     </div>
                     <div className={styles.price}>
                         <span className={styles.priceText}>Price:</span>

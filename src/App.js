@@ -7,9 +7,6 @@ import HotelsPage from './pages/HotelsPage';
 import './App.css';
 
 export const App = (props) => {
-  const auth = useSelector(store => store.reducer.AuthReducer.auth)
-
-  console.log(auth);
   
   return (
     <div className="App">
