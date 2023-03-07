@@ -2,12 +2,14 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fullDateFormat, makeCorrectDaysText } from '../../../../../../common/otherConst';
 import { heartActiveSvg, heartSvg, hotelPicSvg, hotelStarsSvg } from '../../../../../../images/svgCollector';
-import { likeHotel } from '../../../../../../redux/HotelReducer';
-import { addNewHotel } from '../../../../../../redux/LikedListReducer';
+import { likeHotel, removeLikeFromHotel } from '../../../../../../redux/HotelReducer';
+import { addNewHotel, removeFromLikedList } from '../../../../../../redux/LikedListReducer';
 import styles from './ElementHotel.module.css';
 
 const ElementHotel = ({ checkIn, days, stars, hotelId, priceAvg, hotelName, loading }) => {
     const likedList = useSelector(store => store.reducer.HotelReducer.likedId);
+    const likedId = useSelector(store => store.reducer.HotelReducer.likedId);
+
     const dispatch = useDispatch();
     
     if (loading) {
@@ -16,14 +18,26 @@ const ElementHotel = ({ checkIn, days, stars, hotelId, priceAvg, hotelName, load
 
     let checkInDate = fullDateFormat(checkIn);
     let daysInHotel = makeCorrectDaysText(days);
-    
+
     const hotelPic = hotelPicSvg();
     const hotelStar = hotelStarsSvg(stars);
     const heart = heartSvg();
     const heartActive = heartActiveSvg();
     const pushLikeButton = () => {
-        // dispatch(likeHotel(hotelId))
-        // dispatch(addNewHotel({hotelId, checkInDate, daysInHotel, stars, priceAvg}))
+        if (!likedId.includes(hotelId) ) {
+            dispatch(likeHotel(hotelId));
+            dispatch(addNewHotel({
+                hotelId: hotelId, 
+                hotelName: hotelName, 
+                checkInDate, 
+                daysInHotel: `${days} ${daysInHotel}`, 
+                stars: stars, 
+                priceAvg: priceAvg}));
+        } else {
+            dispatch(removeLikeFromHotel(hotelId));
+            dispatch(removeFromLikedList(hotelId));
+        }
+        
     }
     
     return (

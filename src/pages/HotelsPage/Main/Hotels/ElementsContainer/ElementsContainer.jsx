@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import ElementHotel from './ElementHotel/ElementHotel';
 import styles from './ElementsContainer.module.css';
 import moment from 'moment';
@@ -19,6 +19,7 @@ export default function ElementsContainer({ loading }) {
     const days = moment(checkOut.split('-')).diff(moment(checkIn.split('-')), 'days')
 
     const [shownHotels, setShownHotels] = useState(10);
+    let likedId = useSelector(store => store.reducer.HotelReducer.likedId)
 
     const hasNextPage = shownHotels <= MAX_HOTEL_ITEMS; 
 
@@ -36,11 +37,6 @@ export default function ElementsContainer({ loading }) {
         rootMargin: '0px 0px 400px 0px',
       });
 
-      console.log('hotels - ', hotels)
-      console.log('shownHotels - ', shownHotels)
-      console.log('hasNextPage - ', hasNextPage)
-
-    const shownCrap = [...hotels].splice(0, shownHotels);
     return (
         <div>
             <div className={styles.liked}>Добавлено в избранное: <span>3</span> отеля
@@ -48,7 +44,9 @@ export default function ElementsContainer({ loading }) {
             </div>
             
             <div className={styles.itemsContainer} ref={rootRef}>
-                {shownCrap.map(hotel => <ElementHotel {...hotel} key={hotel.hotelId} days={days} checkIn={checkIn.split('-')}/>)}
+                {[...hotels].splice(0, shownHotels).map(hotel => 
+                    <ElementHotel {...hotel} key={hotel.hotelId} days={days} checkIn={checkIn.split('-')} likedId={likedId}/>)
+                }
                 {(hasNextPage) && (
                     <div ref={sentryRef}><ElementHotel loading={true} /></div>
                 )}

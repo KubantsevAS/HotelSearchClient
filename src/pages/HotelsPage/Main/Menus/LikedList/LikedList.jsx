@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styles from './LikedList.module.css'
+import LikedElement from './LikedElement/LikedElement'
 
 export default function Liked() {
 
@@ -12,7 +13,10 @@ export default function Liked() {
             <div>
                 <button>Рейтинг</button><button>Цена</button>
             </div>
-            <div>HotelContainer</div>
+
+            <div>
+                {hotels.map(hotel => <LikedElement {...hotel} key={hotel.hotelId}/>)}
+            </div>
         </div>
     )
 }

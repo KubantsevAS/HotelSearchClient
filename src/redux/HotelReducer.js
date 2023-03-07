@@ -3,6 +3,7 @@ import moment from "moment"
 export const SET_HOTELS_DATA = 'hotel/SET_HOTELS_DATA'
 export const GET_HOTELS_DATA = 'hotel/GET_HOTELS_DATA'
 export const LIKE = 'hotel/LIKE'
+export const REMOVE_LIKE = 'hotel/REMOVE_LIKE'
 
 
 const initialState = {
@@ -28,6 +29,11 @@ const HotelReducer = (state = initialState, action) => {
                 ...state,
                 likedId: [...state.likedId, action.payload]
             }
+        case REMOVE_LIKE:
+            return {
+                ...state,
+                likedId: state.likedId.filter(item => item !== action.payload)
+            }
         default: 
             return state
     }
@@ -41,5 +47,7 @@ export const getHotelsData = (payload) => ({type: GET_HOTELS_DATA, payload})
 export const setHotelsData = (payload) => ({type: SET_HOTELS_DATA, payload})
 
 export const likeHotel = (payload) => ({type: LIKE, payload})
+
+export const removeLikeFromHotel = (payload) => ({type: REMOVE_LIKE, payload})
 
 export default HotelReducer;
