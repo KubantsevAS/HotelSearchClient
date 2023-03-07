@@ -7,8 +7,8 @@ import { addNewHotel, removeFromLikedList } from '../../../../../../redux/LikedL
 import styles from './ElementHotel.module.css';
 
 const ElementHotel = ({ checkIn, days, stars, hotelId, priceAvg, hotelName, loading }) => {
+
     const likedList = useSelector(store => store.reducer.HotelReducer.likedId);
-    const likedId = useSelector(store => store.reducer.HotelReducer.likedId);
 
     const dispatch = useDispatch();
     
@@ -24,7 +24,7 @@ const ElementHotel = ({ checkIn, days, stars, hotelId, priceAvg, hotelName, load
     const heart = heartSvg();
     const heartActive = heartActiveSvg();
     const pushLikeButton = () => {
-        if (!likedId.includes(hotelId) ) {
+        if (!likedList.includes(hotelId) ) {
             dispatch(likeHotel(hotelId));
             dispatch(addNewHotel({
                 hotelId: hotelId, 

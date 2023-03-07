@@ -13,9 +13,6 @@ export default function ElementsContainer({ loading }) {
     const checkIn = useSelector(store => store.reducer.HotelReducer.checkIn)
     const checkOut = useSelector(store => store.reducer.HotelReducer.checkOut)
 
-    const test = useSelector(store => store.reducer.HotelReducer)
-
-    console.log('test - ', test)
     const days = moment(checkOut.split('-')).diff(moment(checkIn.split('-')), 'days')
 
     const [shownHotels, setShownHotels] = useState(10);
@@ -35,7 +32,7 @@ export default function ElementsContainer({ loading }) {
         // We can use it to trigger 'onLoadMore' when the sentry comes near to become
         // visible, instead of becoming fully visible on the screen.
         rootMargin: '0px 0px 400px 0px',
-      });
+    });
 
     return (
         <div>
