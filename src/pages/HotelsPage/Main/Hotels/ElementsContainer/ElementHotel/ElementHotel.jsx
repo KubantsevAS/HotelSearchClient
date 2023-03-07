@@ -10,7 +10,7 @@ export default function ElementHotel(props) {
 
     let checkInDate = fullDateFormat(props.checkIn);
     let daysInHotel = makeCorrectDaysText(props.days);
-    
+
     const hotelPic = hotelPicSvg();
     const hotelStar = hotelStarsSvg(props.stars);
     const heart = heartSvg();
@@ -22,7 +22,13 @@ export default function ElementHotel(props) {
     const pushLikeButton = () => {
         if (!props.likedId.includes(props.hotelId) ) {
             dispatch(likeHotel(props.hotelId));
-            dispatch(addNewHotel({hotelId: props.hotelId, checkInDate, daysInHotel, stars: props.stars, priceAvg: props.priceAvg}));
+            dispatch(addNewHotel({
+                hotelId: props.hotelId, 
+                hotelName: props.hotelName, 
+                checkInDate, 
+                daysInHotel: `${props.days} ${daysInHotel}`, 
+                stars: props.stars, 
+                priceAvg: props.priceAvg}));
         } else {
             dispatch(removeLikeFromHotel(props.hotelId));
             dispatch(removeFromLikedList(props.hotelId));
