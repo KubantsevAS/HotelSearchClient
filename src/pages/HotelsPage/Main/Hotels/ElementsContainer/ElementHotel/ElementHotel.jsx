@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fullDateFormat, makeCorrectDaysText } from '../../../../../../common/otherConst';
 import { heartActiveSvg, heartSvg, hotelPicSvg, hotelStarsSvg } from '../../../../../../images/svgCollector';
-import { likeHotel } from '../../../../../../redux/HotelReducer';
-import { addNewHotel } from '../../../../../../redux/LikedListReducer';
+import { likeHotel, removeLikeFromHotel } from '../../../../../../redux/HotelReducer';
+import { addNewHotel, removeFromLikedList } from '../../../../../../redux/LikedListReducer';
 import styles from './ElementHotel.module.css';
 
 export default function ElementHotel(props) {
@@ -20,8 +20,14 @@ export default function ElementHotel(props) {
 
     const dispatch = useDispatch();
     const pushLikeButton = () => {
-        dispatch(likeHotel(props.hotelId))
-        dispatch(addNewHotel({hotelId: props.hotelId, checkInDate, daysInHotel, stars: props.stars, priceAvg: props.priceAvg}))
+        if (!props.likedId.includes(props.hotelId) ) {
+            dispatch(likeHotel(props.hotelId));
+            dispatch(addNewHotel({hotelId: props.hotelId, checkInDate, daysInHotel, stars: props.stars, priceAvg: props.priceAvg}));
+        } else {
+            dispatch(removeLikeFromHotel(props.hotelId));
+            dispatch(removeFromLikedList(props.hotelId));
+        }
+        
     }
     
     

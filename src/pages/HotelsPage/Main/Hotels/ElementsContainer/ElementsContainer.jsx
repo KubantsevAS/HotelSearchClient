@@ -12,6 +12,7 @@ export default function ElementsContainer() {
     let checkIn = useSelector(store => store.reducer.HotelReducer.checkIn)
     let checkOut = useSelector(store => store.reducer.HotelReducer.checkOut)
     let location = useSelector(store => store.reducer.HotelReducer.location)
+    let likedId = useSelector(store => store.reducer.HotelReducer.likedId)
 
     let days = moment(checkOut.split('-')).diff(moment(checkIn.split('-')), 'days')
     
@@ -30,7 +31,9 @@ export default function ElementsContainer() {
             </div>
             
             <div className={styles.itemsContainer}>
-                {hotels.map(hotel => <ElementHotel {...hotel} key={hotel.hotelId} days={days} checkIn={checkIn.split('-')}/>)}
+                {hotels.map(hotel => 
+                    <ElementHotel {...hotel} key={hotel.hotelId} days={days} checkIn={checkIn.split('-')} likedId={likedId}/>)
+                }
             </div>
         </div>
     )
