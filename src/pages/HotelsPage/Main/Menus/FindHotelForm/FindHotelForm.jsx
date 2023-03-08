@@ -3,7 +3,7 @@ import { Form, Field } from "react-final-form";
 import { useDispatch } from "react-redux";
 import moment from "moment";
 import MyDatePicker from "../../../../../features/MyDatePicker/MyDatePicker";
-import styles from "./FindHotel.module.css";
+import styles from "./FindHotelForm.module.css";
 import { calendarSvg } from "../../../../../images/svgCollector";
 import { getHotelsData } from "../../../../../redux/HotelReducer";
 
@@ -21,7 +21,7 @@ export default function FindHotel() {
     dispatch(getHotelsData({ location, checkIn, checkOut }));
   };
 
-  const calendar = calendarSvg();
+  const calendarIcon = calendarSvg();
 
   return (
     <div className={styles.findForm}>
@@ -40,14 +40,12 @@ export default function FindHotel() {
             </div>
             <div className={styles.field}>
               <label className={styles.fieldLabel}>Дата заселения</label>
-
               <Field
                 name="date"
                 component={MyDatePicker}
                 className={styles.input}
               />
-
-              <div className={styles.calendarIcon}>{calendar}</div>
+              <div className={styles.calendarIcon}>{calendarIcon}</div>
             </div>
             <div className={styles.field}>
               <label className={styles.fieldLabel}>Количество дней</label>

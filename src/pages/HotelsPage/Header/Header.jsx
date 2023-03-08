@@ -16,9 +16,9 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.title}>Simple Hotel Check</div>
-      <button type="button" className={styles.exit} onClick={exitPage}>
+      <div className={styles.exit} onClick={exitPage}>
         Выйти {exitButton}
-      </button>
+      </div>
     </div>
   );
 }

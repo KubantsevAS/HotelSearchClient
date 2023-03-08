@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import createSagaMiddleware from "@redux-saga/core";

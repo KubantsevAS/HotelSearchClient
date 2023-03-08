@@ -80,13 +80,9 @@ function ElementHotel({
         </div>
 
         <div className={styles.likedPrice}>
-          <button
-            type="button"
-            className={styles.heart}
-            onClick={pushLikeButton}
-          >
+          <div className={styles.heart} onClick={pushLikeButton}>
             {likedList.includes(hotelId) ? heartActive : heart}
-          </button>
+          </div>
           <div className={styles.price}>
             <span className={styles.priceText}>Price:</span>
             <span className={styles.priceNumber}>{priceAvg} ₽</span>
