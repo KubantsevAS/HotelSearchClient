@@ -20,19 +20,26 @@ export const makeCorrectDaysText = (dayFormat) => {
   const newArr = dayFormat.toString().split("");
 
   if (dayFormat < 10) {
-    return dayFormat === 1
-      ? "день"
-      : dayFormat > 1 && dayFormat < 5
-      ? `дня`
-      : `дней`;
+    if (dayFormat === 1) {
+      return "день";
+    }
+    if (dayFormat > 1 && dayFormat < 5) {
+      return "дня";
+    }
+
+    return "дней";
   }
   if (dayFormat > 20) {
-    return +newArr[newArr.length - 1] === 1
-      ? "день"
-      : newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5
-      ? `дня`
-      : `дней`;
+    if (+newArr[newArr.length - 1] === 1) {
+      return "день";
+    }
+    if (newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5) {
+      return "дня";
+    }
+
+    return "дней";
   }
+
   return "дней";
 };
 
@@ -40,18 +47,26 @@ export const makeCorrectHotelsText = (dayFormat) => {
   const newArr = dayFormat.toString().split("");
 
   if (dayFormat < 10) {
-    return dayFormat === 1
-      ? "отель"
-      : dayFormat > 1 && dayFormat < 5
-      ? `отеля`
-      : `отелей`;
+    if (dayFormat === 1) {
+      return "отель";
+    }
+    if (dayFormat > 1 && dayFormat < 5) {
+      return "отеля";
+    }
+
+    return "отелей";
   }
+
   if (dayFormat > 20) {
-    return +newArr[newArr.length - 1] === 1
-      ? "отель"
-      : newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5
-      ? `отеля`
-      : `отелей`;
+    if (+newArr[newArr.length - 1] === 1) {
+      return "отель";
+    }
+    if (newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5) {
+      return "отеля";
+    }
+
+    return "отелей";
   }
+
   return "отелей";
 };

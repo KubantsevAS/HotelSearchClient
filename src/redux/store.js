@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
 import HotelReducer from "./HotelReducer";
+
 import AuthReducer from "./AuthReducer";
 import LikedListReducer from "./LikedListReducer";
 import { rootSaga } from "./sagas/saga";
@@ -14,7 +15,7 @@ const reducer = combineReducers({
   LikedListReducer,
 });
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     reducer,
   },
@@ -22,3 +23,5 @@ export const store = configureStore({
 });
 
 SagaMiddleware.run(rootSaga);
+
+export default store;

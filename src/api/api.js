@@ -1,12 +1,12 @@
 import axios from "axios";
-import moment from "moment/moment";
-import { MAX_HOTEL_ITEMS } from "./consts";
+import {
+  baseUrl,
+  initialCheckIn,
+  initialCheckOut,
+  MAX_HOTEL_ITEMS,
+} from "./consts";
 
-const baseUrl = "http://engine.hotellook.com/api/v2/cache.json?";
-
-const initialCheckIn = moment().format("YYYY-MM-DD");
-const initialCheckOut = moment().add(1, "days").format("YYYY-MM-DD");
-
+// eslint-disable-next-line import/prefer-default-export
 export const getHotelItems = async (
   location = "Москва",
   checkIn = initialCheckIn,
