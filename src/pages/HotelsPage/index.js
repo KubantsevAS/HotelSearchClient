@@ -1,3 +1,3 @@
-import HotelsPage from './HotelsPage';
+import HotelsPage from "./HotelsPage";
 
 export default HotelsPage;
