@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   fullDateFormat,
   makeCorrectDaysText,
@@ -78,9 +78,13 @@ function ElementHotel({
         </div>
 
         <div className={styles.likedPrice}>
-          <div className={styles.heart} onClick={pushLikeButton}>
+          <button
+            type="button"
+            className={styles.heart}
+            onClick={pushLikeButton}
+          >
             {likedList.includes(hotelId) ? heartActive : heart}
-          </div>
+          </button>
           <div className={styles.price}>
             <span className={styles.priceText}>Price:</span>
             <span className={styles.priceNumber}>{priceAvg} ₽</span>

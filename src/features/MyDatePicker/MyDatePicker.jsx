@@ -8,11 +8,7 @@ import "./MyDatePicker.css";
 
 registerLocale("ru", ru);
 
-export default function MyDatePicker({
-  name,
-  input,
-  input: { value, onChange },
-}) {
+export default function MyDatePicker({ name, input, input: { value } }) {
   const [startDate, setStartDate] = useState(value);
 
   return (
