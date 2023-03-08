@@ -9,10 +9,6 @@ export function* handleHotelsData(action) {
   yield put(setHotelsData(data));
 }
 
-export function* watchClickSaga() {
+export function* watchGetHotelsSaga() {
   yield takeEvery(GET_HOTELS_DATA, handleHotelsData);
-}
-
-export function* rootSaga() {
-  yield watchClickSaga();
 }

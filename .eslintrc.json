@@ -12,6 +12,10 @@
       }
     },
   
+    "env": {
+      "browser": true
+    },
+    
     "plugins": ["prettier"],
     "rules": {
       "no-console": 2,
