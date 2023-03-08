@@ -13,8 +13,6 @@ export default function Hotels() {
   const checkIn = useSelector((store) => store.reducer.HotelReducer.checkIn);
   const checkOut = useSelector((store) => store.reducer.HotelReducer.checkOut);
 
-  console.log(checkIn);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

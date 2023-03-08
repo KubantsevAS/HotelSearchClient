@@ -12,7 +12,7 @@ export default function AuthPage() {
 
   return (
     <div className={styles.authPage}>
-      <div className={styles.pic}></div>
+      <div className={styles.pic} />
       <div className={styles.loginWindow}>
         <div className={styles.loginTitle}>Simple Hotel Check</div>
         <div className={styles.loginForm}>

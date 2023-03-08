@@ -1,0 +1,10 @@
+.imgForCarousel {
+    height: 149px;
+    width: 164px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.alice-carousel__stage-item {
+    padding: 28px 0;
+}
