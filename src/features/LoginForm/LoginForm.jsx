@@ -4,7 +4,7 @@ import { Form } from "react-final-form";
 import { useDispatch } from "react-redux";
 import styles from "./LoginForm.module.css";
 import { setLogin } from "../../redux/AuthReducer";
-import { CreateInput } from "../../common/formHelper";
+import { createInput } from "../../common/utils/formHelper";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -13,18 +13,20 @@ function LoginForm() {
     dispatch(setLogin());
   };
 
+  const Input = createInput();
+
   return (
     <Form onSubmit={onSubmit}>
       {({ handleSubmit, submitting }) => (
         <form onSubmit={handleSubmit}>
-          <CreateInput
+          <Input
             name="email"
             // validate={composeValidators(requiredField, checkLatinText, checkEmail)}
             label="Логин"
             type="text"
             styles={styles}
           />
-          <CreateInput
+          <Input
             name="password"
             // validate={composeValidators(requiredField, checkLatinText, minLengthCreator(8))}
             label="Пароль"

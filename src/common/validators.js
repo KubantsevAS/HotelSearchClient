@@ -9,7 +9,7 @@ export const checkLatinText = (value) => {
 };
 
 export const checkEmail = (value) => {
-  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
+  return !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)
     ? "You must enter a valid E-mail"
     : undefined;
 };

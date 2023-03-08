@@ -1,23 +1,23 @@
 import React from "react";
 import { Form, Field } from "react-final-form";
+import { useDispatch } from "react-redux";
+import moment from "moment";
 import MyDatePicker from "../../../../../features/MyDatePicker/MyDatePicker";
 import styles from "./FindHotel.module.css";
 import { calendarSvg } from "../../../../../images/svgCollector";
-import { useDispatch } from "react-redux";
-import moment from "moment";
 import { getHotelsData } from "../../../../../redux/HotelReducer";
 
 export default function FindHotel() {
   const dispatch = useDispatch();
 
   const onSubmit = ({ location, date, days }) => {
-    let check = date
+    const check = date
       .split("-")
       .reverse()
       .map((elem) => +elem);
     check[1] -= 1;
-    let checkIn = moment(check).format("YYYY-MM-DD");
-    let checkOut = moment(check).add(days, "days").format("YYYY-MM-DD");
+    const checkIn = moment(check).format("YYYY-MM-DD");
+    const checkOut = moment(check).add(days, "days").format("YYYY-MM-DD");
     dispatch(getHotelsData({ location, checkIn, checkOut }));
   };
 
@@ -26,7 +26,7 @@ export default function FindHotel() {
   return (
     <div className={styles.findForm}>
       <Form onSubmit={onSubmit}>
-        {({ handleSubmit, submitError, submitting, values }) => (
+        {({ handleSubmit, submitting }) => (
           <form onSubmit={handleSubmit}>
             <div className={styles.field}>
               <label className={styles.fieldLabel}>Локация</label>

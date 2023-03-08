@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,11 +9,7 @@ import "./MyDatePicker.css";
 
 registerLocale("ru", ru);
 
-export default function MyDatePicker({
-  name,
-  input,
-  input: { value, onChange },
-}) {
+export default function MyDatePicker({ name, input, input: { value } }) {
   const [startDate, setStartDate] = useState(value);
 
   return (
@@ -31,7 +28,7 @@ export default function MyDatePicker({
           input.onChange(null);
         }
       }}
-      className={"MyDataPickerInput"}
+      className="MyDataPickerInput"
     />
   );
 }

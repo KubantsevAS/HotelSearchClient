@@ -12,9 +12,15 @@
       }
     },
   
+    "env": {
+      "browser": true
+    },
+    
     "plugins": ["prettier"],
     "rules": {
-      "jsx-a11y/click-events-have-key-events" : "off",
+      "no-console": 2,
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/label-has-associated-control": "off",
       "react/prop-types": 0,
       "prettier/prettier": [
         "error",

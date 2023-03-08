@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/function-component-definition */
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   fullDateFormat,
   makeCorrectDaysText,
@@ -36,8 +38,8 @@ const ElementHotel = ({
     return <div className={styles.block}>...loading</div>;
   }
 
-  let checkInDate = fullDateFormat(checkIn);
-  let daysInHotel = makeCorrectDaysText(days);
+  const checkInDate = fullDateFormat(checkIn);
+  const daysInHotel = makeCorrectDaysText(days);
 
   const hotelPic = hotelPicSvg();
   const hotelStar = hotelStarsSvg(stars);
@@ -48,12 +50,12 @@ const ElementHotel = ({
       dispatch(likeHotel(hotelId));
       dispatch(
         addNewHotel({
-          hotelId: hotelId,
-          hotelName: hotelName,
+          hotelId,
+          hotelName,
           checkInDate,
           daysInHotel: `${days} ${daysInHotel}`,
-          stars: stars,
-          priceAvg: priceAvg,
+          stars,
+          priceAvg,
         })
       );
     } else {
@@ -71,7 +73,7 @@ const ElementHotel = ({
           <div className={styles.hotelTitle}>{hotelName}</div>
           <div className={styles.date}>
             {checkInDate}
-            <span></span>
+            <span />
             {`${days} ${daysInHotel}`}
           </div>
           <div className={styles.stars}>{hotelStar}</div>
