@@ -38,6 +38,19 @@
     cursor: pointer;
 }
 
+.btnDisabled {
+    border: 1px solid #e5e5e5;
+    color: #99A0A3;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+}
+
 .likedListContainer {
     max-height: 300px;
     overflow: auto;
