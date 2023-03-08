@@ -6,6 +6,8 @@ import LikedElement from "./LikedElement/LikedElement";
 import {
   sortListByStarsUp,
   sortListByStarsDown,
+  sortListByPriceUp,
+  sortListByPriceDown,
 } from "../../../../../redux/LikedListReducer";
 import {
   sortingArrowsDeactivatedSvg,
@@ -21,19 +23,38 @@ export default function Liked() {
   const arrowDisable = sortingArrowsDeactivatedSvg();
   const arrowUp = sortingArrowsUpSvg();
   const arrowDown = sortingArrowsDownSvg();
-  const [starButtonState, setStarButtonState] = useState(false);
+
+  const [starBtnDisable, setStarBtnDisable] = useState(false);
+  const [priceBtnDisable, setPriceBtnDisable] = useState(false);
+
   const [starSort, setStarSort] = useState("down");
+  const [priceSort, setPriceSort] = useState("down");
 
   const dispatch = useDispatch();
 
   const sortByStars = () => {
+    setStarBtnDisable(true);
+    setPriceBtnDisable(false);
+    setPriceSort("down");
     if (starSort === "down") {
       dispatch(sortListByStarsUp());
-      setStarButtonState(true);
       setStarSort("up");
     } else if (starSort === "up") {
       dispatch(sortListByStarsDown());
       setStarSort("down");
+    }
+  };
+
+  const sortByPrice = () => {
+    setStarBtnDisable(false);
+    setPriceBtnDisable(true);
+    setStarSort("down");
+    if (priceSort === "down") {
+      dispatch(sortListByPriceUp());
+      setPriceSort("up");
+    } else if (priceSort === "up") {
+      dispatch(sortListByPriceDown());
+      setPriceSort("down");
     }
   };
 
@@ -43,19 +64,37 @@ export default function Liked() {
     <div className={styles.likedMenu}>
       <div className={styles.title}>Избранное</div>
       <div className={styles.sortbuttons}>
-        <button className={styles.btn} onClick={sortByStars} type="button">
+        <button
+          className={`${styles.btn} ${
+            !starBtnDisable ? styles.btnDis : styles.btnActive
+          }`}
+          onClick={sortByStars}
+          type="button"
+        >
           <span>Рейтинг</span>
           <span className={styles.arrow}>
-            {!starButtonState
+            {!starBtnDisable
               ? arrowDisable
               : starSort === "up"
               ? arrowUp
               : arrowDown}
           </span>
         </button>
-        <button className={styles.btn} type="button">
+        <button
+          className={`${styles.btn} ${
+            !priceBtnDisable ? styles.btnDis : styles.btnActive
+          }`}
+          type="button"
+          onClick={sortByPrice}
+        >
           <span>Цена</span>
-          <span className={styles.arrow}>{arrowDisable}</span>
+          <span className={styles.arrow}>
+            {!priceBtnDisable
+              ? arrowDisable
+              : priceSort === "up"
+              ? arrowUp
+              : arrowDown}
+          </span>
         </button>
       </div>
 
