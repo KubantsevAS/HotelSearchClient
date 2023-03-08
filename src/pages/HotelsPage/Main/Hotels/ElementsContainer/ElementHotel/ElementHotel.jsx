@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/function-component-definition */
 import React from "react";
 import { useDispatch } from "react-redux";
 import {

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
@@ -6,6 +7,7 @@ import Main from "./Main/Main";
 
 export default function HotelsPage() {
   const auth = useSelector((store) => store.reducer.AuthReducer.auth);
+
   if (!auth) {
     return <Navigate to="/auth" />;
   }
