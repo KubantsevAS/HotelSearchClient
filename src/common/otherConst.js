@@ -11,3 +11,13 @@ export const makeCorrectDaysText = (dayFormat) => {
         return +newArr[newArr.length - 1] === 1 ? 'день' : newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5 ? `дня` : `дней`
     } else return 'дней'
 }
+
+export const makeCorrectHotelsText = (dayFormat) => {
+    let newArr = dayFormat.toString().split('');
+    
+    if (dayFormat < 10) {
+        return dayFormat === 1 ? 'отель' : dayFormat > 1 && dayFormat < 5 ? `отеля` : `отелей`
+    } else if (dayFormat > 20) {
+        return +newArr[newArr.length - 1] === 1 ? 'отель' : newArr[newArr.length - 1] > 1 && newArr[newArr.length - 1] < 5 ? `отеля` : `отелей`
+    } else return 'отелей'
+}

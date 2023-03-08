@@ -6,9 +6,9 @@ import { likeHotel, removeLikeFromHotel } from '../../../../../../redux/HotelRed
 import { addNewHotel, removeFromLikedList } from '../../../../../../redux/LikedListReducer';
 import styles from './ElementHotel.module.css';
 
-const ElementHotel = ({ checkIn, days, stars, hotelId, priceAvg, hotelName, loading }) => {
+const ElementHotel = ({ checkIn, days, stars, hotelId, priceAvg, hotelName, loading, likedList }) => {
 
-    const likedList = useSelector(store => store.reducer.HotelReducer.likedId);
+    
 
     const dispatch = useDispatch();
     

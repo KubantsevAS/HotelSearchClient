@@ -17,7 +17,7 @@
 }
 
 .pic {
-    width: 64px;
+    min-width: 64px;
     height: 64px;
     border-radius: 50%;
     background: rgba(65, 82, 46, 0.05);
@@ -25,13 +25,15 @@
     justify-content: center;
     align-items: center;
     margin-right: 24px;
+    align-self: center;
 }
 
 .hotelTitle {
     font-weight: 300;
     font-size: 17px;
     line-height: 22px;
-    color: #424242
+    color: #424242;
+    max-width: 330px;
 }
 
 .info {
@@ -60,7 +62,7 @@
 }
 
 
-.likedPrice{
+.likedPrice {
     margin-left: auto;
     align-self: flex-start;
 }
@@ -80,6 +82,8 @@
 .heart:hover svg path{
     fill: #ebebeb;
 }
+
+
 
 .priceText {
     font-weight: 300;
