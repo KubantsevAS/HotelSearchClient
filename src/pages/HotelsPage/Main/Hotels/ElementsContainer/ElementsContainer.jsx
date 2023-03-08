@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import ElementHotel from "./ElementHotel/ElementHotel";
-import styles from "./ElementsContainer.module.css";
 import moment from "moment";
 import useInfiniteScroll from "react-infinite-scroll-hook";
+import ElementHotel from "./ElementHotel/ElementHotel";
+import styles from "./ElementsContainer.module.css";
 import { MAX_HOTEL_ITEMS } from "../../../../../api/consts";
 import { makeCorrectHotelsText } from "../../../../../common/otherConst";
 
@@ -14,7 +15,7 @@ export default function ElementsContainer({ loading }) {
   const checkOut = useSelector((store) => store.reducer.HotelReducer.checkOut);
   const likedList = useSelector((store) => store.reducer.HotelReducer.likedId);
 
-  let likedHotelsText = makeCorrectHotelsText(likedList.length);
+  const likedHotelsText = makeCorrectHotelsText(likedList.length);
 
   const days = moment(checkOut.split("-")).diff(
     moment(checkIn.split("-")),
@@ -28,7 +29,7 @@ export default function ElementsContainer({ loading }) {
   const [sentryRef, { rootRef }] = useInfiniteScroll({
     loading,
     hasNextPage,
-    onLoadMore: () => setShownHotels((shownHotels) => shownHotels + 10),
+    onLoadMore: () => setShownHotels((shownHotelsArg) => shownHotelsArg + 10),
     // When there is an error, we stop infinite loading.
     // It can be reactivated by setting "error" state as undefined.
     disabled: !!error,
@@ -57,7 +58,7 @@ export default function ElementsContainer({ loading }) {
         ))}
         {hasNextPage && (
           <div ref={sentryRef}>
-            <ElementHotel loading={true} />
+            <ElementHotel loading />
           </div>
         )}
       </div>

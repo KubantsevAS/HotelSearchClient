@@ -1,25 +1,29 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from "react";
+import { useDispatch } from "react-redux";
 import styles from "./LikedElement.module.css";
 import {
   heartActiveSvg,
   hotelStarsSvg,
 } from "../../../../../../images/svgCollector";
-import {
-  fullDateFormat,
-  makeCorrectDaysText,
-} from "../../../../../../common/otherConst";
-import { useDispatch } from "react-redux";
 import { removeLikeFromHotel } from "../../../../../../redux/HotelReducer";
 import { removeFromLikedList } from "../../../../../../redux/LikedListReducer";
 
-export default function LikedElement(props) {
-  const hotelStar = hotelStarsSvg(props.stars);
+export default function LikedElement({
+  hotelId,
+  stars,
+  hotelName,
+  checkInDate,
+  daysInHotel,
+  priceAvg,
+}) {
+  const hotelStar = hotelStarsSvg(stars);
   const heartActive = heartActiveSvg();
 
   const dispatch = useDispatch();
   const pushLikeButton = () => {
-    dispatch(removeLikeFromHotel(props.hotelId));
-    dispatch(removeFromLikedList(props.hotelId));
+    dispatch(removeLikeFromHotel(hotelId));
+    dispatch(removeFromLikedList(hotelId));
   };
 
   return (
@@ -27,16 +31,16 @@ export default function LikedElement(props) {
       <div className={styles.container}>
         <div className={styles.info}>
           <div className={styles.title_heart}>
-            <div className={styles.hotelTitle}>{props.hotelName}</div>
+            <div className={styles.hotelTitle}>{hotelName}</div>
             <div className={styles.heart} onClick={pushLikeButton}>
               {heartActive}
             </div>
           </div>
 
           <div className={styles.date}>
-            {props.checkInDate}
-            <span></span>
-            {`${props.daysInHotel}`}
+            {checkInDate}
+            <span />
+            {`${daysInHotel}`}
           </div>
         </div>
 
@@ -45,7 +49,7 @@ export default function LikedElement(props) {
 
           <div className={styles.price}>
             <span className={styles.priceText}>Price:</span>
-            <span className={styles.priceNumber}>{props.priceAvg} ₽</span>
+            <span className={styles.priceNumber}>{priceAvg} ₽</span>
           </div>
         </div>
       </div>

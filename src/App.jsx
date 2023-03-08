@@ -1,12 +1,11 @@
+import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { connect, useSelector } from "react-redux";
-
+import { connect } from "react-redux";
 import AuthPage from "./pages/AuthPage";
 import HotelsPage from "./pages/HotelsPage";
-
 import "./App.css";
 
-export function App(props) {
+export function App() {
   return (
     <div className="App">
       <Routes>

@@ -9,11 +9,18 @@
       "requireConfigFile": false,
       "babelOptions": {
         "presets": ["@babel/preset-react"]
-     }
+      }
     },
   
     "plugins": ["prettier"],
     "rules": {
-      "prettier/prettier": "error"
+      "jsx-a11y/click-events-have-key-events" : "off",
+      "react/prop-types": 0,
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
     }
 }
