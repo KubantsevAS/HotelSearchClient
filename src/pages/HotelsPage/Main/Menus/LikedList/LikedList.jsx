@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from './LikedList.module.css'
 import LikedElement from './LikedElement/LikedElement'
-import { sortListByStarsUp, sortListByStarsDown } from '../../../../../redux/LikedListReducer'
-import { sortingArrowsDeactivatedSvg, sortingArrowsDownSvg, sortingArrowsUpSvg } from '../../../../../images/svgCollector'
+import { sortListByStarsUp } from '../../../../../redux/LikedListReducer'
 
 export default function Liked() {
 
@@ -14,10 +13,11 @@ export default function Liked() {
     const arrowDown = sortingArrowsDownSvg();
 
     const [starButtonState, setStarButtonState] = useState(false);
-    const [starSort, setStarSort] = useState('down')
+    const [starSort, setStarSort] = useState('down');
     
     const dispatch = useDispatch();
 
+    
     const sortByStars = () => {
         if (starSort === 'down') {
             dispatch(sortListByStarsUp());
@@ -28,19 +28,15 @@ export default function Liked() {
             setStarSort('down')
         }
     }
-
-    console.log(starButtonState, starSort)
-    
     const sortByPrice = () => {
 
     }
-
 
     return (
         <div className={styles.likedMenu}>
             <div className={styles.title}>Избранное</div>
             <div className={styles.sortbuttons}>
-                <button className={styles.btn} onClick={sortByStars}>
+            <button className={styles.btn} onClick={sortByStars}>
                     <span>Рейтинг</span>
                     <span className={styles.arrow}>{!starButtonState ? arrowDisable : starSort === 'up' ? arrowUp : arrowDown}</span>
                 </button>
@@ -50,9 +46,11 @@ export default function Liked() {
                 </button>
             </div>
 
-            <div className={styles.likedListContainer}>
-                {hotels.map(hotel => <LikedElement {...hotel} key={hotel.hotelId}/>)}
-            </div>
-        </div>
-    )
+      <div className={styles.likedListContainer}>
+        {hotels.map((hotel) => (
+          <LikedElement {...hotel} key={hotel.hotelId} />
+        ))}
+      </div>
+    </div>
+  );
 }
