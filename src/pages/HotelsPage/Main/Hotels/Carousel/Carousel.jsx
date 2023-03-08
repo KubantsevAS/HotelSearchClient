@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Carousel.module.css";
-import car1 from "./../../../../../images/carousel1.png";
-import car2 from "./../../../../../images/carousel2.png";
-import car3 from "./../../../../../images/carousel3.png";
-import car4 from "./../../../../../images/carousel5.png";
+import car1 from "../../../../../images/carousel1.png";
+import car2 from "../../../../../images/carousel2.png";
+import car3 from "../../../../../images/carousel3.png";
+import car4 from "../../../../../images/carousel5.png";
 
 export default function Carousel() {
   return (

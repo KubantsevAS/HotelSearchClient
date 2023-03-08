@@ -31,7 +31,7 @@ export default function MyDatePicker({
           input.onChange(null);
         }
       }}
-      className={"MyDataPickerInput"}
+      className="MyDataPickerInput"
     />
   );
 }

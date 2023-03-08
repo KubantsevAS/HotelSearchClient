@@ -20,7 +20,7 @@ import {
 } from "../../../../../../redux/LikedListReducer";
 import styles from "./ElementHotel.module.css";
 
-const ElementHotel = ({
+function ElementHotel({
   checkIn,
   days,
   stars,
@@ -29,15 +29,15 @@ const ElementHotel = ({
   hotelName,
   loading,
   likedList,
-}) => {
+}) {
   const dispatch = useDispatch();
 
   if (loading) {
     return <div className={styles.block}>...loading</div>;
   }
 
-  let checkInDate = fullDateFormat(checkIn);
-  let daysInHotel = makeCorrectDaysText(days);
+  const checkInDate = fullDateFormat(checkIn);
+  const daysInHotel = makeCorrectDaysText(days);
 
   const hotelPic = hotelPicSvg();
   const hotelStar = hotelStarsSvg(stars);
@@ -48,12 +48,12 @@ const ElementHotel = ({
       dispatch(likeHotel(hotelId));
       dispatch(
         addNewHotel({
-          hotelId: hotelId,
-          hotelName: hotelName,
+          hotelId,
+          hotelName,
           checkInDate,
           daysInHotel: `${days} ${daysInHotel}`,
-          stars: stars,
-          priceAvg: priceAvg,
+          stars,
+          priceAvg,
         })
       );
     } else {
@@ -71,7 +71,7 @@ const ElementHotel = ({
           <div className={styles.hotelTitle}>{hotelName}</div>
           <div className={styles.date}>
             {checkInDate}
-            <span></span>
+            <span />
             {`${days} ${daysInHotel}`}
           </div>
           <div className={styles.stars}>{hotelStar}</div>
@@ -89,6 +89,6 @@ const ElementHotel = ({
       </div>
     </div>
   );
-};
+}
 
 export default ElementHotel;
