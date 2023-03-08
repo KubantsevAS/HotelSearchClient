@@ -22,7 +22,7 @@ import {
 } from "../../../../../../redux/LikedListReducer";
 import styles from "./ElementHotel.module.css";
 
-const ElementHotel = ({
+function ElementHotel({
   checkIn,
   days,
   stars,
@@ -31,7 +31,7 @@ const ElementHotel = ({
   hotelName,
   loading,
   likedList,
-}) => {
+}) {
   const dispatch = useDispatch();
 
   if (loading) {
@@ -91,6 +91,6 @@ const ElementHotel = ({
       </div>
     </div>
   );
-};
+}
 
 export default ElementHotel;
