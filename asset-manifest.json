@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HotelSearchClient/static/css/main.67330827.css",
-    "main.js": "/HotelSearchClient/static/js/main.604b2c98.js",
+    "main.js": "/HotelSearchClient/static/js/main.a18702fa.js",
     "static/js/787.0d6312d2.chunk.js": "/HotelSearchClient/static/js/787.0d6312d2.chunk.js",
     "static/media/AuthBackground.png": "/HotelSearchClient/static/media/AuthBackground.f22bf54d33654ce9a203.png",
     "static/media/carousel1.png": "/HotelSearchClient/static/media/carousel1.df0b9d71a767c6ed62c0.png",
@@ -10,11 +10,11 @@
     "static/media/carousel2.png": "/HotelSearchClient/static/media/carousel2.cf4c40b5f6fe19f522fc.png",
     "index.html": "/HotelSearchClient/index.html",
     "main.67330827.css.map": "/HotelSearchClient/static/css/main.67330827.css.map",
-    "main.604b2c98.js.map": "/HotelSearchClient/static/js/main.604b2c98.js.map",
+    "main.a18702fa.js.map": "/HotelSearchClient/static/js/main.a18702fa.js.map",
     "787.0d6312d2.chunk.js.map": "/HotelSearchClient/static/js/787.0d6312d2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.67330827.css",
-    "static/js/main.604b2c98.js"
+    "static/js/main.a18702fa.js"
   ]
 }
