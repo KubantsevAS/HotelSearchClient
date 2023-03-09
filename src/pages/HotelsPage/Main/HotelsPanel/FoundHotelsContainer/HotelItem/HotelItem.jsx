@@ -20,9 +20,9 @@ import {
   addNewHotel,
   removeFromLikedList,
 } from "../../../../../../redux/LikedListReducer";
-import styles from "./ElementHotel.module.css";
+import styles from "./HotelItem.module.css";
 
-function ElementHotel({
+function HotelItem({
   checkIn,
   days,
   stars,
@@ -93,4 +93,4 @@ function ElementHotel({
   );
 }
 
-export default ElementHotel;
+export default HotelItem;

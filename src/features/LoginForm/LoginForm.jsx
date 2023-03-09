@@ -5,6 +5,13 @@ import { useDispatch } from "react-redux";
 import styles from "./LoginForm.module.css";
 import { setLogin } from "../../redux/AuthReducer";
 import { createInput } from "../../common/utils/formHelper";
+import {
+  requiredField,
+  composeValidators,
+  checkLatinText,
+  checkEmail,
+  minLengthCreator,
+} from "../../common/validators";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -21,14 +28,22 @@ function LoginForm() {
         <form onSubmit={handleSubmit}>
           <Input
             name="email"
-            // validate={composeValidators(requiredField, checkLatinText, checkEmail)}
+            validate={composeValidators(
+              requiredField,
+              checkLatinText,
+              checkEmail
+            )}
             label="Логин"
-            type="text"
+            type="email"
             styles={styles}
           />
           <Input
             name="password"
-            // validate={composeValidators(requiredField, checkLatinText, minLengthCreator(8))}
+            validate={composeValidators(
+              requiredField,
+              checkLatinText,
+              minLengthCreator(8)
+            )}
             label="Пароль"
             type="password"
             styles={styles}

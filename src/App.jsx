@@ -1,11 +1,10 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { connect } from "react-redux";
 import AuthPage from "./pages/AuthPage";
 import HotelsPage from "./pages/HotelsPage";
 import "./App.css";
 
-export function App() {
+export default function App() {
   return (
     <div className="App">
       <Routes>
@@ -16,11 +15,3 @@ export function App() {
     </div>
   );
 }
-
-const mapStateToProps = (store) => ({
-  auth: store.reducer.AuthReducer.auth,
-});
-
-const AppContainer = connect(mapStateToProps)(App);
-
-export default AppContainer;

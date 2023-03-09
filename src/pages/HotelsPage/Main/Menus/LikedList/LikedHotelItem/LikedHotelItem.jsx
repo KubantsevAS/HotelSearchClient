@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from "react";
 import { useDispatch } from "react-redux";
-import styles from "./LikedElement.module.css";
+import styles from "./LikedHotelItem.module.css";
 import {
   heartActiveSvg,
   hotelStarsSvg,
@@ -9,7 +9,7 @@ import {
 import { removeLikeFromHotel } from "../../../../../../redux/HotelReducer";
 import { removeFromLikedList } from "../../../../../../redux/LikedListReducer";
 
-export default function LikedElement({
+export default function LikedHotelItem({
   hotelId,
   stars,
   hotelName,

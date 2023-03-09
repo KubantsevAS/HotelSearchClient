@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import useInfiniteScroll from "react-infinite-scroll-hook";
-import ElementHotel from "./ElementHotel/ElementHotel";
-import styles from "./ElementsContainer.module.css";
+import HotelItem from "./HotelItem/HotelItem";
+import styles from "./FoundHotelsContainer.module.css";
 import { MAX_HOTEL_ITEMS } from "../../../../../api/consts";
 import { makeCorrectHotelsText } from "../../../../../common/otherConst";
 
-export default function ElementsContainer({ loading }) {
+export default function FoundHotelsContainer({ loading }) {
   const hotels = useSelector((store) => store.reducer.HotelReducer.hotels);
   const error = useSelector((store) => store.reducer.HotelReducer.error);
   const checkIn = useSelector((store) => store.reducer.HotelReducer.checkIn);
@@ -43,7 +43,7 @@ export default function ElementsContainer({ loading }) {
 
       <div className={styles.itemsContainer} ref={rootRef}>
         {[...hotels].splice(0, shownHotels).map((hotel) => (
-          <ElementHotel
+          <HotelItem
             {...hotel}
             key={hotel.hotelId}
             days={days}
@@ -53,7 +53,7 @@ export default function ElementsContainer({ loading }) {
         ))}
         {hasNextPage && (
           <div ref={sentryRef}>
-            <ElementHotel loading />
+            <HotelItem loading />
           </div>
         )}
       </div>

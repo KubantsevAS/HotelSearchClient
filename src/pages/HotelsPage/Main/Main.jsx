@@ -1,5 +1,5 @@
 import React from "react";
-import Hotels from "./Hotels/Hotels";
+import HotelsPanel from "./HotelsPanel/HotelsPanel";
 import Menus from "./Menus/Menus";
 import styles from "./Main.module.css";
 
@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <div className={styles.main}>
       <Menus />
-      <Hotels />
+      <HotelsPanel />
     </div>
   );
 }

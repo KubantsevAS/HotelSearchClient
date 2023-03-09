@@ -61,6 +61,12 @@
     margin-right: 22px;
 }
 
+.likedListContainer h2 {
+    font-weight: 400;
+    font-size: 20px;
+    color: #99A0A3;
+}
+
 /*custom scroll-bar*/
 .likedListContainer::-webkit-scrollbar {
     width: 4px;

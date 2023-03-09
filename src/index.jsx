@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import AppContainer from "./App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
 
@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <AppContainer />
+        <App />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
