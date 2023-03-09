@@ -1,12 +1,14 @@
-## **Тестовое задание для Junior Frontent Developer**
+## **Simple Hotel Check**
 
-Необходимо реализовать web приложение для поиска отелей, которое имеет два экрана.
+Web приложение для поиска отелей, которое имеет два экрана.
 
 Ссылка на [макет](<https://www.figma.com/file/PxI4ycD6GMGSpxOZ2NbFBO/React-Test%2FSimple-HotelCheck-(Copy)?node-id=0%3A1>).
 
-Стек интересующих нас технологий **React** + **Redux-saga** + **React Router**, остальные библиотеки по желанию.
+Стек  **React** + **Redux-saga** + **React Router**
 
-[API](https://support.travelpayouts.com/hc/ru/articles/115000343268-API-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BE%D1%82%D0%B5%D0%BB%D0%B5%D0%B9#price/), которое можно использовать.
+Также были применены **axios**, **moment.js**, **react-final-form**, **react-infinite-scroll-hook**, **react-datepicker**, **react-alice-carousel**
+
+ [API](https://support.travelpayouts.com/hc/ru/articles/115000343268-API-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BE%D1%82%D0%B5%D0%BB%D0%B5%D0%B9#price/), которое было использовано.
 
 ## **Описание интерфейса:**
 
@@ -37,4 +39,9 @@
 - По клику на кнопку “Выход” авторизация сбрасывается и происходит переход
   на страницу авторизации
 
-Решение необходимо залить на гитхаб, развернуть на хостинге (heroku, netlify или любом другом по вашему выбору) и прислать ссылки на репозиторий и развернутое приложение.
+## **Установка и предварительные требования**
+
+1. Необходимо установить пакет `create-react-app` с помощью команды `yarn create react-app app-name` или `npx create-react-app app-name`
+2. Скачать или клонировать данный репозиторий
+3. Применить команду `yarn` или `npm install`
+4. Запустить с помощью команды `yarn start` или `npm start`
