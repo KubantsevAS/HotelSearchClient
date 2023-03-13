@@ -6,6 +6,7 @@ import MyDatePicker from "../../../../../features/MyDatePicker/MyDatePicker";
 import styles from "./FindHotelForm.module.css";
 import { calendarSvg } from "../../../../../images/svgCollector";
 import { getHotelsData } from "../../../../../redux/HotelReducer";
+import { requiredField } from "../../../../../common/validators";
 
 export default function FindHotel() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ export default function FindHotel() {
                 type="text"
                 placeholder="Москва"
                 className={styles.input}
+                validate={requiredField}
               />
             </div>
             <div className={styles.field}>
@@ -44,6 +46,7 @@ export default function FindHotel() {
                 name="date"
                 component={MyDatePicker}
                 className={styles.input}
+                validate={requiredField}
               />
               <div className={styles.calendarIcon}>{calendarIcon}</div>
             </div>
@@ -55,6 +58,7 @@ export default function FindHotel() {
                 type="text"
                 placeholder="1"
                 className={styles.input}
+                validate={requiredField}
               />
             </div>
             <button type="submit" disabled={submitting} className={styles.btn}>
