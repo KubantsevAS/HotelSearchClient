@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
@@ -17,10 +18,9 @@ export default function FoundHotelsContainer({ loading }) {
 
   const likedHotelsText = makeCorrectHotelsText(likedList.length);
 
-  const days = moment(checkOut.split("-")).diff(
-    moment(checkIn.split("-")),
-    "days"
-  );
+  const formatCheckIn = moment(checkIn, "YYYY-MM-DD");
+  const formatCheckOut = moment(checkOut, "YYYY-MM-DD");
+  const days = formatCheckOut.diff(formatCheckIn, "days");
 
   const [shownHotels, setShownHotels] = useState(15);
 
