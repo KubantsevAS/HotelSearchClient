@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Field } from "react-final-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import MyDatePicker from "../../../../../features/MyDatePicker/MyDatePicker";
 import styles from "./FindHotelForm.module.css";
@@ -10,6 +10,10 @@ import { requiredField } from "../../../../../common/validators";
 
 export default function FindHotel() {
   const dispatch = useDispatch();
+
+  const errorFetchMsg = useSelector(
+    (store) => store.reducer.HotelErrorReducer.errorMsg
+  );
 
   const onSubmit = ({ location, date, days }) => {
     const check = date
@@ -61,6 +65,9 @@ export default function FindHotel() {
                 validate={requiredField}
               />
             </div>
+            {errorFetchMsg && (
+              <div className={styles.errorMsg}>{errorFetchMsg}</div>
+            )}
             <button type="submit" disabled={submitting} className={styles.btn}>
               Найти
             </button>

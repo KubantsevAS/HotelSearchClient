@@ -17,7 +17,12 @@ export const getHotelItems = async (
       `${baseUrl}location=${location}&currency=rub&checkIn=${checkIn}&checkOut=${checkOut}&limit=${MAX_HOTEL_ITEMS}`
     )
     .then((response) => {
-      return { data: response.data, checkIn, checkOut, location };
+      return {
+        data: response.data,
+        checkIn,
+        checkOut,
+        location,
+      };
     });
   return request;
 };

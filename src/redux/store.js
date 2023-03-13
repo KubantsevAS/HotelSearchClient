@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
 import HotelReducer from "./HotelReducer";
-
+import HotelErrorReducer from "./HotelErrorRuducer";
 import AuthReducer from "./AuthReducer";
 import LikedListReducer from "./LikedListReducer";
 import rootSaga from "./sagas/rootSaga";
@@ -14,6 +14,7 @@ const reducer = combineReducers({
   AuthReducer,
   HotelReducer,
   LikedListReducer,
+  HotelErrorReducer,
 });
 
 // eslint-disable-next-line no-undef
