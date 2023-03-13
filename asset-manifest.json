@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/HotelSearchClient/static/css/main.67330827.css",
-    "main.js": "/HotelSearchClient/static/js/main.c25e76c2.js",
+    "main.css": "/HotelSearchClient/static/css/main.ba3922b6.css",
+    "main.js": "/HotelSearchClient/static/js/main.129b129f.js",
     "static/js/787.0d6312d2.chunk.js": "/HotelSearchClient/static/js/787.0d6312d2.chunk.js",
     "static/media/AuthBackground.png": "/HotelSearchClient/static/media/AuthBackground.f22bf54d33654ce9a203.png",
     "static/media/carousel1.png": "/HotelSearchClient/static/media/carousel1.df0b9d71a767c6ed62c0.png",
@@ -9,12 +9,12 @@
     "static/media/carousel5.png": "/HotelSearchClient/static/media/carousel5.05d357bc561cd5e6ad64.png",
     "static/media/carousel2.png": "/HotelSearchClient/static/media/carousel2.cf4c40b5f6fe19f522fc.png",
     "index.html": "/HotelSearchClient/index.html",
-    "main.67330827.css.map": "/HotelSearchClient/static/css/main.67330827.css.map",
-    "main.c25e76c2.js.map": "/HotelSearchClient/static/js/main.c25e76c2.js.map",
+    "main.ba3922b6.css.map": "/HotelSearchClient/static/css/main.ba3922b6.css.map",
+    "main.129b129f.js.map": "/HotelSearchClient/static/js/main.129b129f.js.map",
     "787.0d6312d2.chunk.js.map": "/HotelSearchClient/static/js/787.0d6312d2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67330827.css",
-    "static/js/main.c25e76c2.js"
+    "static/css/main.ba3922b6.css",
+    "static/js/main.129b129f.js"
   ]
 }
