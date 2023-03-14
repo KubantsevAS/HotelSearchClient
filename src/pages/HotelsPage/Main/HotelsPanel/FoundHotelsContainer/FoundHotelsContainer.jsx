@@ -42,6 +42,9 @@ export default function FoundHotelsContainer({ loading }) {
       </div>
 
       <div className={styles.itemsContainer} ref={rootRef}>
+        {!hotels.length && (
+          <h2 className={styles.filler}>На выбранные даты отели не найдены</h2>
+        )}
         {[...hotels].splice(0, shownHotels).map((hotel) => (
           <HotelItem
             {...hotel}

@@ -18,6 +18,10 @@
     padding-right: 14px;
 }
 
+.filler {
+  margin-bottom: 200px;
+}
+
 /*custom scroll-bar*/
 .itemsContainer::-webkit-scrollbar {
   width: 4px;
