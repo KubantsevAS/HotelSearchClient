@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { Form, Field } from "react-final-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,14 +36,21 @@ export default function FindHotel() {
           <form onSubmit={handleSubmit}>
             <div className={styles.field}>
               <label className={styles.fieldLabel}>Локация</label>
-              <Field
-                name="location"
-                component="input"
-                type="text"
-                placeholder="Москва"
-                className={styles.input}
-                validate={requiredField}
-              />
+              <Field name="location" validate={requiredField}>
+                {({ input, meta }) => (
+                  <div>
+                    <input
+                      {...input}
+                      type="text"
+                      placeholder="Москва"
+                      className={styles.input}
+                    />
+                    {meta.error && meta.touched && (
+                      <span className={styles.errorMsg}>{meta.error}</span>
+                    )}
+                  </div>
+                )}
+              </Field>
             </div>
             <div className={styles.field}>
               <label className={styles.fieldLabel}>Дата заселения</label>
@@ -56,17 +64,24 @@ export default function FindHotel() {
             </div>
             <div className={styles.field}>
               <label className={styles.fieldLabel}>Количество дней</label>
-              <Field
-                name="days"
-                component="input"
-                type="text"
-                placeholder="1"
-                className={styles.input}
-                validate={requiredField}
-              />
+              <Field name="days" validate={requiredField}>
+                {({ input, meta }) => (
+                  <div>
+                    <input
+                      {...input}
+                      type="text"
+                      placeholder="1"
+                      className={styles.input}
+                    />
+                    {meta.error && meta.touched && (
+                      <span className={styles.errorMsg}>{meta.error}</span>
+                    )}
+                  </div>
+                )}
+              </Field>
             </div>
             {errorFetchMsg && (
-              <div className={styles.errorMsg}>{errorFetchMsg}</div>
+              <div className={styles.errorMsgGlob}>{errorFetchMsg}</div>
             )}
             <button type="submit" disabled={submitting} className={styles.btn}>
               Найти

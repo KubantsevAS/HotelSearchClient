@@ -61,3 +61,9 @@
     line-height: 18px;
 }
 
+.myErrorMsg__forDatePicker {
+    position: absolute;
+    font-size: 11px;
+    color: #EB1717;
+    bottom: -15px;
+}

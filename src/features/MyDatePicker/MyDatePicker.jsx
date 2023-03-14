@@ -9,26 +9,32 @@ import "./MyDatePicker.css";
 
 registerLocale("ru", ru);
 
-export default function MyDatePicker({ name, input, input: { value } }) {
+export default function MyDatePicker({ name, input, meta, input: { value } }) {
   const [startDate, setStartDate] = useState(value);
 
   return (
-    <DatePicker
-      dateFormat="dd.MM.yyyy"
-      locale="ru"
-      name={name}
-      disabledKeyboardNavigation
-      placeholderText={moment().format("DD.MM.YYYY")}
-      selected={startDate}
-      onChange={(date) => {
-        if (isValid(date)) {
-          input.onChange(format(new Date(date), "dd-MM-yyyy"));
-          setStartDate(date);
-        } else {
-          input.onChange(null);
-        }
-      }}
-      className="MyDataPickerInput"
-    />
+    <>
+      <DatePicker
+        dateFormat="dd.MM.yyyy"
+        locale="ru"
+        name={name}
+        disabledKeyboardNavigation
+        placeholderText={moment().format("DD.MM.YYYY")}
+        selected={startDate}
+        onChange={(date) => {
+          if (isValid(date)) {
+            input.onChange(format(new Date(date), "dd-MM-yyyy"));
+            setStartDate(date);
+          } else {
+            input.onChange(null);
+            setStartDate(null);
+          }
+        }}
+        className="MyDataPickerInput"
+      />
+      {meta.error && meta.touched && (
+        <span className="myErrorMsg__forDatePicker">{meta.error}</span>
+      )}
+    </>
   );
 }
