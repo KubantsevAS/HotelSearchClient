@@ -1,4 +1,4 @@
-## **Simple Hotel Check**
+# **Simple Hotel Check**
 
 Web приложение для поиска отелей, которое имеет два экрана.
 
