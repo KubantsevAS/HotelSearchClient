@@ -1,4 +1,3 @@
-/* eslint-disable default-param-last */
 const ADD_TO_LIST = "liked/ADD_TO_LIST";
 const REMOVE_FROM_LIST = "liked/REMOVE_FROM_LIST";
 const SORT_LIST_BY_STARS_UP = "liked/SORT_LIST_BY_STARS_UP";
@@ -10,7 +9,10 @@ const initialState = {
   hotelsData: [],
 };
 
-const LikedListReducer = (state = initialState, action) => {
+const LikedListReducer = (
+  state = initialState,
+  action = { type: "Default" }
+) => {
   switch (action.type) {
     case ADD_TO_LIST:
       return {

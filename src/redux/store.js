@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
@@ -17,10 +16,8 @@ const reducer = combineReducers({
   HotelErrorReducer,
 });
 
-// eslint-disable-next-line no-undef
 const userInfoFromStorage = localStorage.getItem("auth")
-  ? // eslint-disable-next-line no-undef
-    JSON.parse(localStorage.getItem("auth"))
+  ? JSON.parse(localStorage.getItem("auth"))
   : null;
 
 const initialState = {

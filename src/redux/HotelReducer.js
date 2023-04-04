@@ -1,4 +1,3 @@
-/* eslint-disable default-param-last */
 import moment from "moment";
 
 export const SET_HOTELS_DATA = "hotel/SET_HOTELS_DATA";
@@ -14,7 +13,7 @@ const initialState = {
   likedId: [],
 };
 
-const HotelReducer = (state = initialState, action) => {
+const HotelReducer = (state = initialState, action = { type: "Default" }) => {
   switch (action.type) {
     case SET_HOTELS_DATA:
       return {

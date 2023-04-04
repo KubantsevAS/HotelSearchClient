@@ -1,12 +1,13 @@
-/* eslint-disable default-param-last */
-/* eslint-disable no-debugger */
 export const SET_HOTELS_ERROR = "error/SET_HOTELS_ERROR";
 
 const initialState = {
   errorMsg: "",
 };
 
-const HotelErrorReducer = (state = initialState, action) => {
+const HotelErrorReducer = (
+  state = initialState,
+  action = { type: "Default" }
+) => {
   switch (action.type) {
     case SET_HOTELS_ERROR:
       return {
