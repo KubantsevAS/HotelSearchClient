@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+
 import AuthPage from "./pages/AuthPage";
 import HotelsPage from "./pages/HotelsPage";
 import "./App.css";

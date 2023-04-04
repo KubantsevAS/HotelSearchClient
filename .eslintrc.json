@@ -1,32 +1,32 @@
 {
-    "extends": [
-      "airbnb",
-      "prettier",
-      "plugin:prettier/recommended"
-    ],
-    "parser": "@babel/eslint-parser",
-    "parserOptions": {
-      "requireConfigFile": false,
-      "babelOptions": {
-        "presets": ["@babel/preset-react"]
-      }
-    },
-  
-    "env": {
-      "browser": true
-    },
-    
-    "plugins": ["prettier"],
-    "rules": {
-      "no-console": 2,
-      "jsx-a11y/click-events-have-key-events": "off",
-      "jsx-a11y/label-has-associated-control": "off",
-      "react/prop-types": 0,
-      "prettier/prettier": [
-        "error",
-        {
-          "endOfLine": "auto"
-        }
-      ]
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
     }
+  },
+
+  "env": {
+    "browser": true
+  },
+
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": 2,
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/prop-types": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
 }
