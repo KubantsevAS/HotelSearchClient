@@ -9,7 +9,6 @@ export default function AuthPage() {
   if (auth) {
     return <Navigate to="/hotels" />;
   }
-
   return (
     <div className={styles.authPage}>
       <div className={styles.pic} />
