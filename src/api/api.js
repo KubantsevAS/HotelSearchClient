@@ -6,8 +6,7 @@ import {
   MAX_HOTEL_ITEMS,
 } from "./consts";
 
-// eslint-disable-next-line import/prefer-default-export
-export const getHotelItems = async (
+const getHotelItems = async (
   location = "Москва",
   checkIn = initialCheckIn,
   checkOut = initialCheckOut
@@ -26,3 +25,5 @@ export const getHotelItems = async (
     });
   return request;
 };
+
+export default getHotelItems;

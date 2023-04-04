@@ -1,5 +1,5 @@
 import { takeEvery, put, call } from "redux-saga/effects";
-import { getHotelItems } from "../../api/api";
+import getHotelItems from "../../api/api";
 import { GET_HOTELS_DATA, setHotelsData } from "../HotelReducer";
 import { setHotelsError } from "../HotelErrorRuducer";
 

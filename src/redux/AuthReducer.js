@@ -1,8 +1,7 @@
 export const SET_LOGIN = "auth/SET_LOGIN";
 export const SET_LOGOUT = "auth/SET_LOGOUT";
 
-// eslint-disable-next-line default-param-last
-const AuthReducer = (state = { auth: false }, action) => {
+const AuthReducer = (action, state = { auth: false }) => {
   switch (action.type) {
     case SET_LOGIN:
       return { ...state, auth: true };
