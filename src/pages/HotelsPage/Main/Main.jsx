@@ -1,4 +1,5 @@
 import React from "react";
+
 import HotelsPanel from "./HotelsPanel/HotelsPanel";
 import Menus from "./Menus/Menus";
 import styles from "./Main.module.css";

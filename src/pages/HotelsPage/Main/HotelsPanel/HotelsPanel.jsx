@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { fullDateFormat } from "../../../../common/otherConst";
 import { arrowRightSvg } from "../../../../images/svgCollector";
 import Carousel from "../../../../features/Carousel/Carousel";

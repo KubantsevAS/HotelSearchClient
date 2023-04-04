@@ -1,6 +1,6 @@
-/* eslint-disable no-nested-ternary */
 import React from "react";
 import { useSelector } from "react-redux";
+
 import styles from "./LikedList.module.css";
 import LikedHotelItem from "./LikedHotelItem/LikedHotelItem";
 import SortingButtons from "../../../../../features/SortingButtons/SortingButtons";

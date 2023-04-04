@@ -1,21 +1,21 @@
 .liked {
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 22px;
-    color: #424242;
-    text-align: left;
-    margin-bottom: 12px;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  color: #424242;
+  text-align: left;
+  margin-bottom: 12px;
 }
 
-.liked span{
-    font-weight: 500;
+.liked span {
+  font-weight: 500;
 }
 
 .itemsContainer {
-    max-height: 520px;
-    min-width: 500px;
-    overflow: auto;
-    padding-right: 14px;
+  max-height: 520px;
+  min-width: 500px;
+  overflow: auto;
+  padding-right: 14px;
 }
 
 .filler {

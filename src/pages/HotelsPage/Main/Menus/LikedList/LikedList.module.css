@@ -1,84 +1,83 @@
 .likedMenu {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    padding: 32px 0 32px 32px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
-    border-radius: 16px;
-    margin-top: 24px;
-    text-align: left;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0 32px 32px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  margin-top: 24px;
+  text-align: left;
 }
 
 .title {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    color: #424242;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #424242;
 }
 
 .sortbuttons {
-    margin: 32px 0;
-    display: flex;
+  margin: 32px 0;
+  display: flex;
 }
 
 .btn {
-    display: flex;
-    align-items: center;
-    padding: 4px 8px;
-    height: 28px;
-    background: #FFFFFF;
-    border-radius: 4px;
-    margin-right: 8px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  height: 28px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  margin-right: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
 }
 
-.btnActive {  
-    border: 1px solid #41522E;
-    color: #41522E;
+.btnActive {
+  border: 1px solid #41522E;
+  color: #41522E;
 }
 
 .btnDis {
-    border: 1px solid #E5E5E5;
-    color: #99A0A3;
+  border: 1px solid #E5E5E5;
+  color: #99A0A3;
 }
 
 .arrow {
-    display: flex;
-    align-items: center;
-    width: 18px;
-    height: 18px;
-    margin-left: 4px;
+  display: flex;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
 }
 
 .likedListContainer {
-    max-height: 300px;
-    overflow: auto;
-    padding-right: 10px;
-    margin-right: 22px;
+  max-height: 300px;
+  overflow: auto;
+  padding-right: 10px;
+  margin-right: 22px;
 }
 
 .likedListContainer h2 {
-    font-weight: 400;
-    font-size: 20px;
-    color: #99A0A3;
+  font-weight: 400;
+  font-size: 20px;
+  color: #99A0A3;
 }
 
 /*custom scroll-bar*/
 .likedListContainer::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
 
 .likedListContainer::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgb(#41522E);
-    background-color: #e7e7e7;
+  box-shadow: inset 0 0 6px rgb(#41522E);
+  background-color: #e7e7e7;
 }
 
 .likedListContainer::-webkit-scrollbar-thumb {
-    background-color: #41522E;
-    border-radius: 2px;
-    /* outline: 1px solid #41522E; */
+  background-color: #41522E;
+  border-radius: 2px;
 }

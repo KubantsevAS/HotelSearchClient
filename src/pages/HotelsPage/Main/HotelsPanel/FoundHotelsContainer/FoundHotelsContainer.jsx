@@ -1,9 +1,9 @@
-/* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import useInfiniteScroll from "react-infinite-scroll-hook";
+
 import HotelItem from "./HotelItem/HotelItem";
 import styles from "./FoundHotelsContainer.module.css";
 import { MAX_HOTEL_ITEMS } from "../../../../../api/consts";

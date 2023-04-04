@@ -1,30 +1,30 @@
 .header {
-    margin: 0 auto;
-    padding: 32px;
-    height: 92px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  margin: 0 auto;
+  padding: 32px;
+  height: 92px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .title {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    color: #424242;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #424242;
 }
 
 .exit {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    color: #41522E;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #41522E;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .exit svg {
-    margin-left: 12px;
+  margin-left: 12px;
 }
