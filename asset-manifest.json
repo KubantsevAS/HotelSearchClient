@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/HotelSearchClient/static/css/main.2dd26784.css",
-    "main.js": "/HotelSearchClient/static/js/main.a083c471.js",
+    "main.css": "/HotelSearchClient/static/css/main.7a8faf69.css",
+    "main.js": "/HotelSearchClient/static/js/main.55a0e7db.js",
     "static/js/787.0d6312d2.chunk.js": "/HotelSearchClient/static/js/787.0d6312d2.chunk.js",
-    "static/media/AuthBackground.png": "/HotelSearchClient/static/media/AuthBackground.f22bf54d33654ce9a203.png",
-    "static/media/carousel1.png": "/HotelSearchClient/static/media/carousel1.df0b9d71a767c6ed62c0.png",
-    "static/media/carousel3.png": "/HotelSearchClient/static/media/carousel3.dc7ed9cac9811401a106.png",
-    "static/media/carousel5.png": "/HotelSearchClient/static/media/carousel5.05d357bc561cd5e6ad64.png",
-    "static/media/carousel2.png": "/HotelSearchClient/static/media/carousel2.cf4c40b5f6fe19f522fc.png",
+    "static/media/LoginBackground.png": "/HotelSearchClient/static/media/LoginBackground.f22bf54d33654ce9a203.png",
+    "static/media/Carousel1.png": "/HotelSearchClient/static/media/Carousel1.df0b9d71a767c6ed62c0.png",
+    "static/media/Carousel3.png": "/HotelSearchClient/static/media/Carousel3.dc7ed9cac9811401a106.png",
+    "static/media/Carousel5.png": "/HotelSearchClient/static/media/Carousel5.05d357bc561cd5e6ad64.png",
+    "static/media/Carousel2.png": "/HotelSearchClient/static/media/Carousel2.cf4c40b5f6fe19f522fc.png",
     "index.html": "/HotelSearchClient/index.html",
-    "main.2dd26784.css.map": "/HotelSearchClient/static/css/main.2dd26784.css.map",
-    "main.a083c471.js.map": "/HotelSearchClient/static/js/main.a083c471.js.map",
+    "main.7a8faf69.css.map": "/HotelSearchClient/static/css/main.7a8faf69.css.map",
+    "main.55a0e7db.js.map": "/HotelSearchClient/static/js/main.55a0e7db.js.map",
     "787.0d6312d2.chunk.js.map": "/HotelSearchClient/static/js/787.0d6312d2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2dd26784.css",
-    "static/js/main.a083c471.js"
+    "static/css/main.7a8faf69.css",
+    "static/js/main.55a0e7db.js"
   ]
 }
