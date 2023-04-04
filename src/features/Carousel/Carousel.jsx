@@ -1,13 +1,11 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./Carousel.css";
-import car1 from "../../images/carousel1.png";
-import car2 from "../../images/carousel2.png";
-import car3 from "../../images/carousel3.png";
-import car4 from "../../images/carousel5.png";
+import car1 from "../../images/Carousel1.png";
+import car2 from "../../images/Carousel2.png";
+import car3 from "../../images/Carousel3.png";
+import car4 from "../../images/Carousel5.png";
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -66,7 +64,3 @@ export default function Carousel() {
     />
   );
 }
-
-// export default function Carousel() {
-//   return <AliceCarousel mouseTracking items={items} />;
-// }
