@@ -13,6 +13,8 @@ export const months = [
   "декабря",
 ];
 
+// Function for correct days: 1 день, 2 дня instead of using дней everywhere
+
 export const fullDateFormat = (date) =>
   `${+date[2]} ${months[+date[1] - 1]} ${date[0]}`;
 
@@ -42,6 +44,8 @@ export const makeCorrectDaysText = (dayFormat) => {
 
   return "дней";
 };
+
+// Function for correct hotels: 1 отель, 2 отеля instead of using отелей everywhere
 
 export const makeCorrectHotelsText = (dayFormat) => {
   const newArr = dayFormat.toString().split("");

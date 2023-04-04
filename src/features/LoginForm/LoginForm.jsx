@@ -1,10 +1,9 @@
-/* eslint-disable no-undef */
 import React from "react";
 import { Form } from "react-final-form";
 import { useDispatch } from "react-redux";
 import styles from "./LoginForm.module.css";
 import { setLogin } from "../../redux/AuthReducer";
-import { createInput } from "../../common/utils/formHelper";
+import createInput from "../../common/utils/formHelper";
 import {
   requiredField,
   composeValidators,

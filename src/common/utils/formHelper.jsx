@@ -2,8 +2,7 @@ import React from "react";
 
 import { Field } from "react-final-form";
 
-// eslint-disable-next-line import/prefer-default-export
-export function createInput() {
+export default function createInput() {
   return function getInputGenerator({ name, validate, type, label, styles }) {
     return (
       <Field name={name} validate={validate}>

@@ -20,6 +20,7 @@ export const minLengthCreator = (minLength) => (value) => {
     : undefined;
 };
 
+// Validators compose in one function
 export const composeValidators =
   (...validators) =>
   (value) =>
